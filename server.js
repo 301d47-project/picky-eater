@@ -46,6 +46,5 @@ app.get('/', loadHomePage);
 
 function loadHomePage(request, response) {
     response.render('pages/index')
-    .catch(err=> console.error(err));
 
 }
