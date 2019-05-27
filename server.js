@@ -14,7 +14,7 @@ const superagent = require('superagent');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.urlencoded({extnded: true}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 // Use below if we want user to interact with DB
@@ -27,9 +27,9 @@ app.use(express.static('public'));
 // }))
 
 // Database Setup
-const client = new pg.Client(process.env.DATABASE_URL);
-client.connect();
-client.on('error', err => console.error(err));
+// const client = new pg.Client(process.env.DATABASE_URL);
+// client.connect();
+// client.on('error', err => console.error(err));
 
 // View engine for server-side rendering template (EJS)
 app.set('view engine', 'ejs');
@@ -45,5 +45,7 @@ app.get('/', loadHomePage);
 // Request Handlers
 
 function loadHomePage(request, response) {
-    response.send('Pick your food not your nose!!');
+    response.render('pages/index')
+    .catch(err=> console.error(err));
+
 }

@@ -1,0 +1,10 @@
+body{
+    width: 480px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
