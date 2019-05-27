@@ -39,7 +39,7 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // API Routes
 app.get('/', loadHomePage);
-app.post('/results', preformSearch);
+app.post('/results', performSearch);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 
@@ -51,6 +51,14 @@ function loadHomePage(request, response) {
 
 }
 
-function preformSearch(request, response){
-    response.render('pages/results');
-}
+function performSearch(request, response) {
+    let url = 'https://app-staging.forca.life/api/v1/nutrition/food/35556/';
+ 
+    superagent.get(url)
+        .then(apiResponse => {
+            console.log('Console log of:', apiResponse.text());
+            response.send(apiResponse.body.items)
+        });
+ 
+    // .then(response.render('pages/results'));
+ }
