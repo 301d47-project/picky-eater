@@ -45,11 +45,7 @@ app.get('/', loadHomePage);
 // Request Handlers
 
 function loadHomePage(request, response) {
-<<<<<<< HEAD
-    response.render('index);
-=======
     response.render('pages/index')
     .catch(err=> console.error(err));
 
->>>>>>> d18d977229b161924ef5598a73832464b05cf0d3
 }
