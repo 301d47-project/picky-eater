@@ -39,6 +39,7 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // API Routes
 app.get('/', loadHomePage);
+app.get('/about', loadAboutPage);
 
 
 
@@ -46,5 +47,10 @@ app.get('/', loadHomePage);
 
 function loadHomePage(request, response) {
     response.render('pages/index')
+
+}
+
+function loadAboutPage(request, response) {
+    response.render('pages/about')
 
 }
