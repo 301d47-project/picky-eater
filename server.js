@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({extended: true}));
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 // Use below if we want user to interact with DB
 // app.use(methodOverride((request, response) => {
@@ -48,7 +48,6 @@ app.get('*', (request, response) => response.status(404).send('This route does n
 
 function loadHomePage(request, response) {
     response.render('pages/index')
-    .catch(err=> console.error(err));
 
 }
 
