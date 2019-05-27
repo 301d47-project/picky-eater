@@ -39,6 +39,8 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // API Routes
 app.get('/', loadHomePage);
+app.post('/results', preformSearch);
+app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 
 
@@ -48,4 +50,8 @@ function loadHomePage(request, response) {
     response.render('pages/index')
     .catch(err=> console.error(err));
 
+}
+
+function preformSearch(request, response){
+    response.render('pages/results');
 }
