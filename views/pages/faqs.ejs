@@ -49,9 +49,10 @@
                         </form>
                 </div>
                 <div class="inner cover">
-                    <div class='results-container'>
-                      <% searchResults.forEach(recipe => { %>
-                         <Section class="results">
+                    <div class='recipe-container'>
+                        <!-- needs a form to get the query data -->
+                      <% recipeResults.forEach(recipe => { %>  
+                         <Section class="recipes">
                              <img src="<%= recipe.recipe_image %>">
                              <h2><%= recipe.recipe_name %> </h2>
                              <p><%= recipe.recipe_description %></p>

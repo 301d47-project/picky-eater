@@ -101,7 +101,8 @@ function performSearch(request, response) {
 function getRecipe(request, response) {
     
     const apiRequest = require("request");
-    const query = request.body.recipe;
+    const query = request.body.expression;
+    console.log('query', query);
     
 
     const options = {
@@ -118,6 +119,8 @@ function getRecipe(request, response) {
     if (error) throw new Error(error);
     console.log(body);
     const data = JSON.parse(body);
-    const recipes = data.recipes.recipe.slice(0, 10);
-    response.render('pages/faqs', {searchResults: recipes})
+    // response.send(data);
+    const recipes = data.recipes.recipe;
+    // response.send(recipes);
+    response.render('pages/faqs', {recipeResults: recipes});
 })};
