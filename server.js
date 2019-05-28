@@ -61,7 +61,7 @@ function performSearch(request, response) {
     //         response.send(apiResponse.body.items)
     //     });
 
-    // .then(response.render('pages/results'));
+    (response.render('pages/results'));
 
     const apiRequest = require("request");
 
