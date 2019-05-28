@@ -41,81 +41,17 @@
 
                 <div class="inner cover">
                    <div class='results-container'>
+                     <% searchResults.forEach(food => { %>
                         <Section class="results">
-                            <h2>Wendy's Spicy Chicken Nuggets</h2>
-                            <p>Calories: 200</p>
-                            <p>Protein: 12g</p>
-                            <p>Carbs: 15g</p>
-                            <p>Fat 10g</p>
+                            <h2><%= food.food_name %> </h2>
+                            <p><%= food.food_description %></p>
                         </Section>
-                        <Section class="results">
-                            <h2>Wendy's Spicy Chicken Nuggets</h2>
-                            <p>Calories: 200</p>
-                            <p>Protein: 12g</p>
-                            <p>Carbs: 15g</p>
-                            <p>Fat 10g</p>
-                        </Section>
-                        <Section class="results">
-                            <h2>Wendy's Spicy Chicken Nuggets</h2>
-                            <p>Calories: 200</p>
-                            <p>Protein: 12g</p>
-                            <p>Carbs: 15g</p>
-                            <p>Fat 10g</p>
-                        </Section>
-                        <Section class="results">
-                            <h2>Wendy's Spicy Chicken Nuggets</h2>
-                            <p>Calories: 200</p>
-                            <p>Protein: 12g</p>
-                            <p>Carbs: 15g</p>
-                            <p>Fat 10g</p>
-                        </Section>
-                        <Section class="results">
-                            <h2>Wendy's Spicy Chicken Nuggets</h2>
-                            <p>Calories: 200</p>
-                            <p>Protein: 12g</p>
-                            <p>Carbs: 15g</p>
-                            <p>Fat 10g</p>
-                        </Section>
-                        <Section class="results">
-                            <h2>Wendy's Spicy Chicken Nuggets</h2>
-                            <p>Calories: 200</p>
-                            <p>Protein: 12g</p>
-                            <p>Carbs: 15g</p>
-                            <p>Fat 10g</p>
-                        </Section>
-                        <Section class="results">
-                            <h2>Wendy's Spicy Chicken Nuggets</h2>
-                            <p>Calories: 200</p>
-                            <p>Protein: 12g</p>
-                            <p>Carbs: 15g</p>
-                            <p>Fat 10g</p>
-                        </Section>
-                        <Section class="results">
-                            <h2>Wendy's Spicy Chicken Nuggets</h2>
-                            <p>Calories: 200</p>
-                            <p>Protein: 12g</p>
-                            <p>Carbs: 15g</p>
-                            <p>Fat 10g</p>
-                        </Section>
-                        <Section class="results">
-                            <h2>Wendy's Spicy Chicken Nuggets</h2>
-                            <p>Calories: 200</p>
-                            <p>Protein: 12g</p>
-                            <p>Carbs: 15g</p>
-                            <p>Fat 10g</p>
-                        </Section>
-                        <Section class="results">
-                                <h2>Wendy's Spicy Chicken Nuggets</h2>
-                                <p>Calories: 200</p>
-                                <p>Protein: 12g</p>
-                                <p>Carbs: 15g</p>
-                                <p>Fat 10g</p>
-                            </Section>
-                   </div>
-                        <form action='/results' method="POST">
-                            <input id='title' type="text" name="title" value="" placeholder="search for any food item">
-                            <button id="hidden_button" type='submit'>BUTTON</button>
-                        </form>
+                   <% }) %>
+                </div>
+                <form action='/results' method="POST">
+                    <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
+                    <button id="hidden_button" type='submit'>BUTTON</button>
+                </form>
                 </div>
 
                 <div class="mastfoot">
@@ -147,6 +83,7 @@
                 3.0 BY</a></div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </body>
 
 </html>
