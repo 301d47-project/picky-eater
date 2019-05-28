@@ -6,17 +6,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+  color: rgb(255, 249, 249);
 }
 
 input {
@@ -32,7 +22,6 @@ input {
 
 }
 
-
 /*
  * Base structure
  */
@@ -41,12 +30,13 @@ html, body {
   background-color: white;
   height: 100%;
 }
+
 body {
   margin: 0 auto;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  width: 90%;
+  width: 100%;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -54,23 +44,25 @@ body {
   background-image: url("../images/hero_2.jpg");
   display: table;
   width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
+  height: 80%; 
+  min-height: 80%;
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
+
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: top;
+  
 }
-.cover-container {
+.container {
   margin-right: auto;
   margin-left: auto;
 }
 
 /* Padding for spacing */
 .inner {
+  text-shadow: 1.5px 1.5px #333;
   padding: 30px;
 }
 
@@ -79,8 +71,9 @@ body {
  * Header
  */
 .masthead-brand {
-  margin-top: 10px;
+  /* margin-top: 10px;
   margin-bottom: 10px;
+  font-size: 25px; */
 }
 
 .masthead-nav > li {
@@ -92,7 +85,7 @@ body {
 .masthead-nav > li > a {
   padding-right: 0;
   padding-left: 0;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
@@ -133,6 +126,23 @@ body {
   font-weight: bold;
 }
 
+.results-container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.results{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color:  rgba(12, 11, 11, 0.5);  
+  border-radius: 10px;
+}
+
+.results h2{
+  font-size: 15px;
+}
+
 
 /*
  * Footer
@@ -144,7 +154,7 @@ body {
 }
 
 footer{
-  height: 20%;
+  height: 15%;
 }
 
 .footer{
@@ -153,6 +163,12 @@ footer{
   justify-content: space-evenly;
   height: 20%;
   list-style: none;
+  padding-bottom: 0px;
+  padding-top: 2.5%;
+}
+
+.food-icons {
+  width: 15%;
 }
 
 
@@ -177,7 +193,7 @@ footer{
   /* Handle the widths */
   .masthead,
   .mastfoot,
-  .cover-container {
+  .container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
 }
@@ -185,7 +201,7 @@ footer{
 @media (min-width: 992px) {
   .masthead,
   .mastfoot,
-  .cover-container {
+  .container {
     width: 700px;
   }
 
