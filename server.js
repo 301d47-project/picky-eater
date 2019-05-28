@@ -43,6 +43,7 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 app.get('/', loadHomePage);
 app.get('/about', loadAboutPage);
 app.post('/results', performSearch);
+app.get('/info', loadInfoPage);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
@@ -69,6 +70,11 @@ function loadHomePage(request, response) {
 
 function loadAboutPage(request, response) {
     response.render('pages/about')
+
+}
+
+function loadInfoPage(request, response) {
+    response.render('pages/faqs')
 
 }
 
