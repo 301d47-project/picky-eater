@@ -46,12 +46,8 @@ app.get('*', (request, response) => response.status(404).send('This route does n
 // Constructor for Food Item
 
 function Food(info) {
-    const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
-    this.image = info.food_url || placeholderImage;
     this.name = info.food_name;
     this.description = info.food_description;
-    this.id = info.food_id;
-
 
 }
 
@@ -81,6 +77,7 @@ function performSearch(request, response) {
     apiRequest(options, function(error, responseApi, body) {
         if (error) throw new Error(error);
         console.log(body);
+        // response.render('pages/results', {searchResults: body});
         response.send(body);
     })};
 
