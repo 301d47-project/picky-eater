@@ -16,8 +16,9 @@
 
 </head>
 
-<body>
 
+<body>
+      
     <div class="site-wrapper">
 
         <div class="site-wrapper-inner">
@@ -41,11 +42,13 @@
 
                 <div class="inner cover">
                    <div class='results-container'>
-                     <% searchResults.forEach(food => { %>
-                        <Section class="results">
+                     <% searchResults.forEach((food, i) => { %>
+                        <section class="results">
                             <h2><%= food.food_name %> </h2>
                             <p><%= food.food_description %></p>
-                        </Section>
+                        <div class="chart-container"><canvas id="chart-<%- i %>"></canvas></div>
+                        <%# createChart('chart-'+ i, [23, 23, 232, 13]) %>
+                        </section>
                    <% }) %>
                 </div>
                 <form action='/results' method="POST">

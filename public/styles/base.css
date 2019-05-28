@@ -150,6 +150,11 @@ body {
   font-size: 15px;
 }
 
+.chart-container{
+  width: 20vh;
+
+}
+
 
 /*
  * Footer

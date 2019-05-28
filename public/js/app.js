@@ -1,16 +1,20 @@
-var myDoughnutChart = new Chart(ctx, {
-    type: 'doughnut',
-    data = {
-        datasets: [{
-            data: [10, 20, 30]
-        }],
-    
-        // These labels appear in the legend and in the tooltips when hovering different arcs
-        labels: [
-            'Red',
-            'Yellow',
-            'Blue'
-        ]
-    },
-    options: options
-});
+function createChart (id, data) {
+    console.log(id);
+
+    // new Chart(document.getElementById(id), {
+    //     type: 'doughnut',
+    //     data: {
+    //         datasets: [
+    //             {
+    //                 backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+    //                 data: data 
+    //             }
+    //         ]
+    //     },
+    //     options: {
+    //         title: {
+    //             display: true,
+    //         }
+    //     }
+    // });
+}

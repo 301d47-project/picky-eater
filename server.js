@@ -76,7 +76,6 @@ function performSearch(request, response) {
 
     const apiRequest = require("request");
     const query = request.body.expression;
-    console.log(query);
 
     const options = {
         method: 'POST',
@@ -86,7 +85,6 @@ function performSearch(request, response) {
             bearer: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1NTkwMDAyOTgsImV4cCI6MTU1OTA4NjY5OCwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjpbImh0dHBzOi8vb2F1dGguZmF0c2VjcmV0LmNvbS9yZXNvdXJjZXMiLCJiYXNpYyJdLCJjbGllbnRfaWQiOiIwYzVhYTFmODkzMGQ0YzRkYTRkODU3N2MzYmI0ZTZkOSIsInNjb3BlIjpbImJhc2ljIl19.qHjgol9X7H8ojLcj3IXfsLCG5Or5e7DeCLjKFOIAEvJRMJ8FG5t23lmDAq8EALVAHaEQ0FffQajlhzkJRjpVgOq5HFNWlYff56wmtkT3LcMKLL_iOCidHVolfzSVHqGdv_QRe-iqVCq4SJx1mp99QL-l1oPLqvR2g5-m5UTYMo1mPmPZUV1BpSuZqfTeriaC_8z3fWzNz9K903gldqHaMpIF7g9DKP1j29__6-NIDadlACbZglqGniICz9T8w66MO35jRj0Wpz5yiHRahXQpP-3qLUByjV0drVXnBcKqcplzNQh9CN_xwzXNt-W3BtTrbiDE0ELX99AFNYgJ1vqW6A'
         }
     }
-    console.log(options.url);
     
     apiRequest(options, function(error, responseApi, body) {
         if (error) throw new Error(error);
