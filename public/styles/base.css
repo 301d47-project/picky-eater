@@ -65,12 +65,14 @@ body {
   text-shadow: 1.5px 1.5px #333;
   padding: 30px;
 }
+/*========= about page ======== */
 
 
 /*
  * Header
  */
 .masthead-brand {
+
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 25px;
@@ -78,6 +80,7 @@ body {
 
 .masthead-nav > li {
   display: inline-block;
+  position: relative;
 }
 .masthead-nav > li + li {
   margin-left: 20px;
@@ -90,6 +93,7 @@ body {
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
+  
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
@@ -110,6 +114,7 @@ body {
   }
   .masthead-nav {
     float: right;
+  
   }
 }
 
