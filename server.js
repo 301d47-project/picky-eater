@@ -43,8 +43,8 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 app.get('/', loadHomePage);
 app.get('/about', loadAboutPage);
 app.post('/results', performSearch);
+app.get('/cooking', loadInfoPage);
 app.post('/suggestion', searchSuggestion);
-app.get('/info', loadInfoPage);
 app.post('/recipes', getRecipe);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
@@ -57,11 +57,7 @@ function Food(info) {
     this.name = info.food_name;
     this.description = info.food_description;
     this.id = info.food_id;
-
-
 }
-
-
 
 // Request Handlers
 
@@ -97,7 +93,7 @@ function searchSuggestion(request, response) {
 
 
 function loadInfoPage(request, response) {
-    response.render('pages/faqs')
+    response.render('pages/cooking')
 }
 
 function performSearch(request, response) {
@@ -131,7 +127,7 @@ function getRecipe(request, response) {
     
 
     const options = {
-    method: 'POST',
+    method: 'GET',
     url: `https://platform.fatsecret.com/rest/server.api?method=recipes.search&search_expression=${query}&format=json`,
     headers:{'content-type':'application/json'},
     auth: {
@@ -144,8 +140,8 @@ function getRecipe(request, response) {
     if (error) throw new Error(error);
     console.log(body);
     const data = JSON.parse(body);
-    // response.send(data);
+    //response.send(data);
     const recipes = data.recipes.recipe;
-    // response.send(recipes);
-    response.render('pages/faqs', {recipeResults: recipes});
+    //response.send(recipes);
+    response.render('pages/recipes', {recipeResults: recipes});
 })};

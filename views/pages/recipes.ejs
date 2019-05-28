@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="">
-    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/recipe-base.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 
     <title>Picky Eater</title>
@@ -28,11 +27,11 @@
 
                 <div class="masthead clearfix">
                     <div class="inner">
-                        <h3 class="masthead-brand">Results for (search query)</h3>
+                        <h3 class="masthead-brand">Picky Eater</h3>
                         <nav>
                             <ul class="nav masthead-nav">
                                 <!-- add file paths -->
-                                <li class="active"><a href="#">Home</a></li>
+                                <li class="active"><a href="index">Home</a></li>
                                 <li><a href="/cooking">Recipes</a></li>
                                 <li><a href="/about">About Us</a></li>
                             </ul>
@@ -41,20 +40,27 @@
                 </div>
 
                 <div class="inner cover">
-                   <div class='results-container'>
-                     <% searchResults.forEach(food => { %>
-                        <Section class="results">
-                            <h2><%= food.food_name %> </h2>
-                            <p><%= food.food_description %></p>
-                        </Section>
-                   <% }) %>
+                    <h1 class="cover-heading">Take control of your diet and find out exactly what's in that spicy
+                        chicken nugget. <br>We don't judge, we just inform.</h1>
+                    <br>
+                    <br>
+                    <img src="" alt="">
+                        <form action='/results' method="POST">
+                            <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
+                            <button id="hidden_button" type='submit'>BUTTON</button>
+                        </form>
                 </div>
-                <form action='/results' method="POST">
-                    <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
-                    <button id="hidden_button" type='submit'>BUTTON</button>
-                </form>
-                </div>
-
+                <div class="inner cover">
+                    <div class='recipe-container'>
+                        <!-- needs a form to get the query data -->
+                      <% recipeResults.forEach(recipe => { %>  
+                         <Section class="recipes">
+                             <img src="<%= recipe.recipe_image %>">
+                             <h2><%= recipe.recipe_name %> </h2>
+                             <p><%= recipe.recipe_description %></p>
+                         </Section>
+                    <% }) %>
+                 </div>
                 <div class="mastfoot">
                     <div class="inner">
                     </div>
