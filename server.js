@@ -42,9 +42,11 @@ app.get('/', loadHomePage);
 
 
 
+
 // Request Handlers
 
 function loadHomePage(request, response) {
     response.render('pages/index')
 
 }
+
