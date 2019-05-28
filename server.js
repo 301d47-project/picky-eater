@@ -17,6 +17,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
+
+
 // Use below if we want user to interact with DB
 // app.use(methodOverride((request, response) => {
 //     if (request.body && typeof request.body === 'object' && '_method' in request.body) {
@@ -40,6 +42,7 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 // API Routes
 app.get('/', loadHomePage);
 app.get('/results', performSearch);
+app.get('/about', loadAboutPage);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
@@ -61,6 +64,11 @@ function Food(info) {
 
 function loadHomePage(request, response) {
     response.render('pages/index')
+
+}
+
+function loadAboutPage(request, response) {
+    response.render('pages/about')
 
 }
 
