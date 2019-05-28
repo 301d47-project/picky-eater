@@ -56,11 +56,7 @@ function Food(info) {
     this.name = info.food_name;
     this.description = info.food_description;
     this.id = info.food_id;
-
-
 }
-
-
 
 // Request Handlers
 
