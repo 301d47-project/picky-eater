@@ -31,7 +31,7 @@
                             <ul class="nav masthead-nav">
                                 <!-- add file paths -->
                                 <li class="active"><a href="#">Home</a></li>
-                                <li><a href="/info">FAQs</a></li>
+                                <li><a href="/cooking">FAQs</a></li>
                                 <li><a href="/about">About Us</a></li>
                             </ul>
                         </nav>
@@ -43,26 +43,18 @@
                     <br>
                     <br>
                     <img src="" alt="">
-                        <form action='/recipe_results' method="GET">
-                            <input id='search' type="text" name="recipe" value="" placeholder="search for your next meal here">
-                            <button id="hidden_button" type='submit'>BUTTON</button>
-                        </form>
-                </div>
-                <div class="inner cover">
-                    <div class='recipe-container'>
-                        <!-- needs a form to get the query data -->
-                      <% recipeResults.forEach(recipe => { %>  
-                         <Section class="recipes">
-                             <img src="<%= recipe.recipe_image %>">
-                             <h2><%= recipe.recipe_name %> </h2>
-                             <p><%= recipe.recipe_description %></p>
-                         </Section>
-                    <% }) %>
-                 </div>
-                <div class="mastfoot">
-                    <div class="inner">
-                    </div>
-                </div>
+
+
+                         <form action='/recipes' method="POST">
+                             <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
+                             <button id="hidden_button" type='submit'>BUTTON</button>
+                         </form>
+                         </div>
+         
+                         <div class="mastfoot">
+                             <div class="inner">
+                             </div>
+                         </div>
 
             </div>
 
