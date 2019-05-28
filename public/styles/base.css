@@ -72,7 +72,6 @@ body {
  * Header
  */
 .masthead-brand {
-
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 25px;
@@ -132,8 +131,10 @@ body {
 }
 
 .results-container{
+  margin: 0 auto;
   margin-top: 75px;
   margin-bottom: 50px;
+  width: 120%;
 }
 
 .results{
