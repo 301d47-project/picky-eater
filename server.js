@@ -105,7 +105,7 @@ function getRecipe(request, response) {
     
 
     const options = {
-    method: 'GET',
+    method: 'POST',
     url: `https://platform.fatsecret.com/rest/server.api?method=recipes.search&search_expression=${query}&format=json`,
     headers:{'content-type':'application/json'},
     auth: {
