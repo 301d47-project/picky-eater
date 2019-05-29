@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="">
     <link rel="stylesheet" href="styles/recipe-base.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-
     <title>Picky Eater</title>
-
 </head>
-
 <body>
-
     <div class="site-wrapper">
-
         <div class="site-wrapper-inner">
-
             <div class="container">
-
-
                 <div class="masthead clearfix">
                     <div class="inner">
                         <h3 class="masthead-brand">Picky Eater</h3>
@@ -38,7 +28,6 @@
                         </nav>
                     </div>
                 </div>
-
                 <div class="inner cover">
                     <h1 class="cover-heading">Take control of your diet and find out exactly what's in that spicy
                         chicken nugget. <br>We don't judge, we just inform.</h1>
@@ -46,7 +35,7 @@
                     <br>
                     <img src="" alt="">
                         <form action='/results' method="POST">
-                            <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
+                            <input id='search' type="text" name="expression" value="" placeholder="search for your next meal">
                             <button id="hidden_button" type='submit'>BUTTON</button>
                         </form>
                 </div>
@@ -55,9 +44,10 @@
                         <!-- needs a form to get the query data -->
                       <% recipeResults.forEach(recipe => { %>  
                          <Section class="recipes">
-                             <img src="<%= recipe.recipe_image %>">
-                             <h2><%= recipe.recipe_name %> </h2>
-                             <p><%= recipe.recipe_description %></p>
+                             <img id="recipe-image"src="<%= recipe.recipe_image %>">
+                             <h2 id="recipe-name"><%= recipe.recipe_name %> </h2>
+                             <p id="recipe-des"><%= recipe.recipe_description %></p>
+                             <button id="recipebutton"><a href="<%= recipe.recipe_url %>">Recipe Link</a></button>
                          </Section>
                     <% }) %>
                  </div>
@@ -65,33 +55,11 @@
                     <div class="inner">
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
-    <footer>
-        <nav>
-            <ul class='footer'>
-                <li><img class='food-icons' src="images/icons/burger.png" alt=""><li>
-                <li><img class='food-icons' src="images/icons/ice-cream.png" alt=""><li>
-                <li><img class='food-icons' src="images/icons/glass.png" alt=""><li>
-                <li><img class='food-icons' src="images/icons/salad.png" alt=""><li>
-            </ul>
-        </nav>
-        <br>
-        <br>
-        <br>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
-                href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC
-                3.0 BY</a></div>
-    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/app.js"></script>
 </body>
-
 </html>
