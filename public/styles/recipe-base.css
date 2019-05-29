@@ -86,6 +86,9 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 25px;
+  background: purple;
+  padding: 1rem;
+  color: white;
 }
 
 .masthead-nav > li {
@@ -277,3 +280,23 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
   width: 100px;
   justify-self: center;
 }
+<<<<<<< HEAD
+=======
+
+.comparebutton:hover {
+  cursor: pointer;
+  background-color:hsla(115, 100%, 45%, 0.75);
+}
+#comparebutton {
+  grid-column-start: 3;
+  
+  background-color: rgba(12, 11, 11, 0.5);
+  border-radius: 2px;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+}
+
+
+
+
+>>>>>>> 4e4f9cf3d74c03a111c8ce4669976f7f6977a5c8
