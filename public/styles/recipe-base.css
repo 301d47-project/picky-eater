@@ -234,6 +234,9 @@ footer{
     width: 700px;
   }
 
+  .masthead-clearfix {
+    position: fixed;
+  }
 
 }
 
