@@ -16,8 +16,9 @@
 
 </head>
 
-<body>
 
+<body>
+      
     <div class="site-wrapper">
 
         <div class="site-wrapper-inner">
@@ -41,11 +42,14 @@
 
                 <div class="inner cover">
                    <div class='results-container'>
-                     <% searchResults.forEach(food => { %>
-                        <Section class="results">
-                            <h2><%= food.food_name %> </h2>
-                            <p><%= food.food_description %></p>
-                        </Section>
+                     <% searchResults.forEach((food, i) => { %>
+                        <section class="results">
+                            <ul>
+                                <li><h2><%= food.food_name %> </h2></li>
+                                <li><%= food.food_description %></li>
+                                <li class="chart-container"><canvas id="chart-<%- i %>" data-info="<%- food.food_description %> "></canvas></li>
+                            </ul>
+                        </section>
                    <% }) %>
                 </div>
                 <form action='/results' method="POST">
@@ -86,5 +90,3 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/app.js"></script>
 </body>
-
-</html>
