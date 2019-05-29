@@ -1,6 +1,9 @@
+require('dotenv').config();
+
 var request = require("request");
-clientID = '0c5aa1f8930d4c4da4d8577c3bb4e6d9'
-clientSecret = 'd861e781af6e40cb8cb1ea237b294e65'
+clientID = process.env.JAMES_TOKEN;
+clientSecret = process.env.JAMES_SECRET;
+
 
 var options = { 
    method: 'POST',
