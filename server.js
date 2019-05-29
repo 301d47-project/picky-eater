@@ -117,7 +117,7 @@ function performSearch(request, response) {
 function getRecipe(request, response) {
     
     const apiRequest = require("request");
-    const query = request.body.recipe;
+    const query = request.body.expression;
     console.log('query', query);
     
 
