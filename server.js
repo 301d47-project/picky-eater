@@ -35,6 +35,7 @@ app.post('/results', performSearch);
 app.get('/cooking', loadInfoPage);
 app.post('/get-suggestions', searchSuggestion);
 app.post('/recipes', getRecipe);
+app.post('/compare', saveFood);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
@@ -98,10 +99,9 @@ function searchSuggestionOld(request, response) {
 
     apiSuggestion(suggestion, function(error, suggestionApi, body) {
         if (error) throw new Error(error);
-        // const data = JSON.parse(body);
-        // const foods = data.foods.food.slice(0, 5);
-        // response.send({'suggestions': { 'suggestion': foods}})
-})};
+    })
+}
+
 
 
 function loadInfoPage(request, response) {
@@ -160,4 +160,14 @@ function getRecipe(request, response) {
     response.render('pages/recipes', {recipeResults: recipes});
 })};
 
+function saveFood(request, response) {
+    console.log('Food Saved');
 
+    let {name, description} = expression.body;
+
+    let SQL = `INSERT INTO food (name, description) VALUES ($1, $2)`;
+
+    let values = [name, description];
+    client.query(SQL, values);
+    
+}
