@@ -9,7 +9,7 @@ function createChart(id) {
         new Chart(document.getElementById(id), {
             type: 'doughnut',
             data: {
-                // labels: ['calories', 'fat', 'carbs', 'protein'],
+                labels: ['fat', 'carbs', 'protein'],
 
                 datasets: [
                     {
@@ -40,8 +40,12 @@ function createChart(id) {
                 responsive: true,
                 maintainAspectRatio: true,
                 showScale: true,
-                animateScale: true
-            }
+                animateScale: true,
+                legend: {
+                    display: false
+                 }
+            },
+           
         });
     }
 }
@@ -54,10 +58,11 @@ $("#search").focus().keyup(function() {
    
     console.log('keydown');
     if ($('#search').val().length > 1) {
-        console.log($('#search').val().length);
+        // console.log($('#search').val().length);
         console.log('String of val: ', $('#search').val())
         $.post('/get-suggestions', {expression: $('#search').val() })
         .then(results => {
+            console.log(results);
             $( "#search" ).autocomplete({
                 source: results.suggestions.suggestion
               });
@@ -67,6 +72,8 @@ $("#search").focus().keyup(function() {
         })
     }
 })
+
+
 
 
     
