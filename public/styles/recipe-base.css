@@ -66,8 +66,8 @@ body {
   font-size: 25px;
 }
 .masthead-nav > li {
-  display: inline-block;
-  position: relative;
+  display: block;
+  position: sticky;
 }
 .masthead-nav > li + li {
   margin-left: 20px;
@@ -196,9 +196,6 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
 <button type="button" class="btn btn-light">Light</button>
 <button type="button" class="btn btn-dark">Dark</button>
 
-<<<<<<< HEAD
-<button type="button" class="btn btn-link">Link</button>
-=======
 }
 
 .recipe-container{
@@ -242,4 +239,3 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
 
 
 
->>>>>>> 18102786c28d4fc7ad737378450b0e9f2d895ecf
