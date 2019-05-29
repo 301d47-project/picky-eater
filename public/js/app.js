@@ -9,7 +9,7 @@ function createChart(id) {
         new Chart(document.getElementById(id), {
             type: 'doughnut',
             data: {
-                // labels: ['calories', 'fat', 'carbs', 'protein'],
+                labels: ['fat', 'carbs', 'protein'],
 
                 datasets: [
                     {
@@ -40,8 +40,12 @@ function createChart(id) {
                 responsive: true,
                 maintainAspectRatio: true,
                 showScale: true,
-                animateScale: true
-            }
+                animateScale: true,
+                legend: {
+                    display: false
+                 }
+            },
+           
         });
     }
 }
@@ -50,23 +54,15 @@ for(chartNum = 0; chartNum < 10; chartNum++) {
     createChart('chart-' + chartNum);
 }
 
-<<<<<<< HEAD
-$('#search').focus().keydown(function() {
-    console.log('keydown');
-    if ($('#search').val().length > 3) {
-        console.log($('#search').val().length);
-        console.log('String of val: ', $('#search').val())
-        $.post('/suggestion', {expression: $('#search').val() })
-=======
 $("#search").focus().keyup(function() {
    
     console.log('keydown');
     if ($('#search').val().length > 1) {
-        console.log($('#search').val().length);
+        // console.log($('#search').val().length);
         console.log('String of val: ', $('#search').val())
         $.post('/get-suggestions', {expression: $('#search').val() })
->>>>>>> d1129e7c0e662b541f9c3867cbd5a86debe2241f
         .then(results => {
+            console.log(results);
             $( "#search" ).autocomplete({
                 source: results.suggestions.suggestion
               });
@@ -77,16 +73,11 @@ $("#search").focus().keyup(function() {
     }
 });
 
-<<<<<<< HEAD
 $('.recipesave').click(function() {
     console.log('Save clicked');
     // $.post('/compare', {expression: food_name, food_description})
 
 });
-=======
-
-    
->>>>>>> d1129e7c0e662b541f9c3867cbd5a86debe2241f
 
 
 
