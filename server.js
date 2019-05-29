@@ -92,6 +92,7 @@ function searchSuggestionOld(request, response) {
         headers:{'content-type':'application/json'},
         auth: {
             bearer: "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1NTkxNTQwMDQsImV4cCI6MTU1OTI0MDQwNCwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjpbImh0dHBzOi8vb2F1dGguZmF0c2VjcmV0LmNvbS9yZXNvdXJjZXMiLCJiYXNpYyJdLCJjbGllbnRfaWQiOiJjMDYzNjY1NDkxZmY0MmQ4OWRhNDJkNzcxZTdkZjc3YiIsInNjb3BlIjpbImJhc2ljIl19.L3SkTfqhRwSwli6cxDSPp7ujGZfo7AwI_LEDZRHSmFdSkeRnQsR_fitRK7m1sR1u4Q6PYdTddUiO4OMeXWuZCaHaLAlSDwaQw2f9tE5z0zQcW65hoyATXKMsl5Dq7X4abp1J-S8z2OYxsklJ4c-lIKYztmz2jy9-7wPBQQHV445UnGgZUJLmngEpWIRC-sf5kbzMjKxiQlELzJoKtuZZJDsPe2TtiCiMEO_m7O3Y1O2-RJi6_VM81dApQpJLpHLk-d4k2SPZrMuf_jYoZyrm3nncp3ix67vDp6fZPUK66WxCoo4_hBIHIqEQTFnSDlnF-M6GeN-cchiCfirtaRDvwQ"
+
         }
     }
 
