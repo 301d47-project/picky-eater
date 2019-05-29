@@ -43,11 +43,14 @@
                         <!-- needs a form to get the query data -->
                       <% recipeResults.forEach(recipe => { %>  
                          <Section class="recipes">
+
                              <img id="recipe-image" src="images/picky-eater-placeholder.jpg">
+
                              <img id="recipe-image"src="<%= recipe.recipe_image %>">
                              <h2 id="recipe-name"><%= recipe.recipe_name %> </h2>
                              <p id="recipe-des"><%= recipe.recipe_description %></p>
                              <button id="recipebutton"><a href="<%= recipe.recipe_url %>">Recipe Link</a></button>
+
                              <button class="comparebutton" type="submit">Compare Food</button>
                          </Section>
                     <% }) %>

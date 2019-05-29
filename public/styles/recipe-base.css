@@ -33,6 +33,7 @@ html, body {
 
 body {
   margin: 0 auto;
+
   color: rgb(252, 245, 245);
   text-align: center;
   /* text-shadow: 0 1px 3px rgba(0,0,0,.5); */
@@ -41,6 +42,7 @@ body {
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
+
   background: url("../images/background3.jpg") no-repeat center center fixed;
   background-size: cover;
   display: table;
@@ -108,6 +110,7 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
+
   color: rgba(250, 246, 246, 0.75);
   border-bottom: 2px solid transparent;
   
@@ -121,6 +124,7 @@ body {
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
+
   color: rgb(255, 250, 250);
   border-bottom-color: #fff;
 }
@@ -239,6 +243,7 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
 }
 
 .recipe-container{
+
   color: white;
   display: grid;
   grid-template-columns: 1fr ;
@@ -252,6 +257,7 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
 .recipes{
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+
   grid-template-rows: 250px 10% 15% 10%;
 }
 
@@ -259,6 +265,7 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
   grid-column: 2/3 ;
   grid-row: 1;
   justify-self: center;
+
   width: 300px;
   height: 200px;
   
@@ -275,6 +282,7 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
 }
 
 #recipebutton{
+
   color: #fff;
   background:rgba(163, 146, 146, 0.945);
   grid-column-start: 1;

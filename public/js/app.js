@@ -50,22 +50,24 @@ for(chartNum = 0; chartNum < 10; chartNum++) {
     createChart('chart-' + chartNum);
 }
 
-$("#search").focus().keydown(function() {
+$("#search").focus().keyup(function() {
+   
     console.log('keydown');
-    if ($('#search').val().length > 3) {
-        // console.log($('#search').val().length);
-        // console.log('String of val: ', $('#search').val())
-        // searchSuggestion();
-        $.post('/suggestion', {expression: $('#search').val() })
+    if ($('#search').val().length > 1) {
+        console.log($('#search').val().length);
+        console.log('String of val: ', $('#search').val())
+        $.post('/get-suggestions', {expression: $('#search').val() })
         .then(results => {
-            console.log('Results: ', results);
-            return results;
+            $( "#search" ).autocomplete({
+                source: results.suggestions.suggestion
+              });
         })
         .catch(error => {
             console.error(error);
         })
     }
 })
+
 
     
 
