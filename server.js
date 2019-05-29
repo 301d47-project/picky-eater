@@ -96,11 +96,11 @@ function loadInfoPage(request, response) {
     response.render('pages/cooking')
 }
 
+
 function performSearch(request, response) {
 
     const apiRequest = require("request");
     const query = request.body.expression;
-    // console.log(query);
 
     const options = {
         method: 'POST',
@@ -110,7 +110,6 @@ function performSearch(request, response) {
             bearer: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1NTkwODc5NTUsImV4cCI6MTU1OTE3NDM1NSwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjpbImh0dHBzOi8vb2F1dGguZmF0c2VjcmV0LmNvbS9yZXNvdXJjZXMiLCJiYXNpYyJdLCJjbGllbnRfaWQiOiIwYzVhYTFmODkzMGQ0YzRkYTRkODU3N2MzYmI0ZTZkOSIsInNjb3BlIjpbImJhc2ljIl19.awtSpjPrdxQrXzrBgDx-Gj9L-cc7UTWQ5gTHNdwLuLG-UbeuqcuoK8NBjVeYGgHe-R8WbAHUS2hYpOdKUW5BkndNf-kHiBYYMvDjvMyANdUfHQQBiERAOnHnMXAm4AjO0MfKcMdsene4tucFqe5FYmvdiRdxWISPIMdin2Lo5g4wV8QOwWbUNUaB26FAo64bUtiz-8UYZxoV2FNFHKRGgrVfqvWJ7UuV8vCVgGS0X9BkIqRd6yy3ZslUkx-EAxtqOQJfLvlWPY-F-1GstHMQtggBbOFiJ12plW6L01L29ISoMf4feA4mXsqCHfiilus7i2NX7V-K4bGBZxhumVWy5Q'
         }
     }
-    // console.log(options.url);
     
     apiRequest(options, function(error, responseApi, body) {
         if (error) throw new Error(error);
@@ -118,6 +117,7 @@ function performSearch(request, response) {
         const foods = data.foods.food.slice(0, 10);
         response.render('pages/results', {searchResults: foods})
     })};
+
 
 function getRecipe(request, response) {
     
