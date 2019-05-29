@@ -80,7 +80,7 @@ function searchSuggestion(request, response) {
         if (error) throw new Error(error);
     })
 }
-})};
+
 
 function loadInfoPage(request, response) {
     response.render('pages/cooking')
