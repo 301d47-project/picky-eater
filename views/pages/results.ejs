@@ -56,6 +56,9 @@
                                 </li>
                                 <li class="chart-container"><canvas id="chart-<%- i %>" data-info="<%- food.food_description %> "></canvas></li>
                                 <li><button class="comparebutton" type="submit">Compare Food</button></li>
+                                <li><h2><%= food.food_name %> </h2></li>
+                                <li class='description'><%= food.food_description %></li>
+                                <li><canvas id="chart-<%- i %>" width="50" height="50" data-info="<%- food.food_description %> "></canvas></li>
                             </ul>
                         </section>
                         <% }) %>
