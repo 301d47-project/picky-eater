@@ -47,8 +47,8 @@
                         <section class="results">
                             <ul>
                                 <li><h2><%= food.food_name %> </h2></li>
-                                <li><%= food.food_description %></li>
-                                <li class="chart-container"><canvas id="chart-<%- i %>" data-info="<%- food.food_description %> "></canvas></li>
+                                <li class='description'><%= food.food_description %></li>
+                                <li><canvas id="chart-<%- i %>" width="50" height="50" data-info="<%- food.food_description %> "></canvas></li>
                             </ul>
                         </section>
                    <% }) %>
