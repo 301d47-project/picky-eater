@@ -83,13 +83,12 @@ function searchSuggestion(request, response) {
         url: `http://platform.fatsecret.com/rest/server.api?method=foods.autocomplete&expression=${querySuggestion}&format=json`,
         headers:{'content-type':'application/json'},
         auth: {
-            bearer: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1NTkwMDAyOTgsImV4cCI6MTU1OTA4NjY5OCwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjpbImh0dHBzOi8vb2F1dGguZmF0c2VjcmV0LmNvbS9yZXNvdXJjZXMiLCJiYXNpYyJdLCJjbGllbnRfaWQiOiIwYzVhYTFmODkzMGQ0YzRkYTRkODU3N2MzYmI0ZTZkOSIsInNjb3BlIjpbImJhc2ljIl19.qHjgol9X7H8ojLcj3IXfsLCG5Or5e7DeCLjKFOIAEvJRMJ8FG5t23lmDAq8EALVAHaEQ0FffQajlhzkJRjpVgOq5HFNWlYff56wmtkT3LcMKLL_iOCidHVolfzSVHqGdv_QRe-iqVCq4SJx1mp99QL-l1oPLqvR2g5-m5UTYMo1mPmPZUV1BpSuZqfTeriaC_8z3fWzNz9K903gldqHaMpIF7g9DKP1j29__6-NIDadlACbZglqGniICz9T8w66MO35jRj0Wpz5yiHRahXQpP-3qLUByjV0drVXnBcKqcplzNQh9CN_xwzXNt-W3BtTrbiDE0ELX99AFNYgJ1vqW6A'
+            bearer: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1NTkwODc5NTUsImV4cCI6MTU1OTE3NDM1NSwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjpbImh0dHBzOi8vb2F1dGguZmF0c2VjcmV0LmNvbS9yZXNvdXJjZXMiLCJiYXNpYyJdLCJjbGllbnRfaWQiOiIwYzVhYTFmODkzMGQ0YzRkYTRkODU3N2MzYmI0ZTZkOSIsInNjb3BlIjpbImJhc2ljIl19.awtSpjPrdxQrXzrBgDx-Gj9L-cc7UTWQ5gTHNdwLuLG-UbeuqcuoK8NBjVeYGgHe-R8WbAHUS2hYpOdKUW5BkndNf-kHiBYYMvDjvMyANdUfHQQBiERAOnHnMXAm4AjO0MfKcMdsene4tucFqe5FYmvdiRdxWISPIMdin2Lo5g4wV8QOwWbUNUaB26FAo64bUtiz-8UYZxoV2FNFHKRGgrVfqvWJ7UuV8vCVgGS0X9BkIqRd6yy3ZslUkx-EAxtqOQJfLvlWPY-F-1GstHMQtggBbOFiJ12plW6L01L29ISoMf4feA4mXsqCHfiilus7i2NX7V-K4bGBZxhumVWy5Q'
         }
     }
     apiSuggestion(suggestion, function(error, suggestionApi, body) {
         if (error) throw new Error(error);
-    })
-} 
+})};
 
 
 function loadInfoPage(request, response) {
@@ -123,7 +122,7 @@ function getRecipe(request, response) {
     
     const apiRequest = require("request");
     const query = request.body.expression;
-    console.log('query', query);
+    // console.log('query', query);
     
 
     const options = {
@@ -138,10 +137,10 @@ function getRecipe(request, response) {
 
     apiRequest(options, function(error, responseApi, body) {
     if (error) throw new Error(error);
-    console.log(body);
+    // console.log(body);
     const data = JSON.parse(body);
     //response.send(data);
-    const recipes = data.recipes.recipe;
+    const recipes = data.recipes.recipe.slice(0, 10);
     //response.send(recipes);
     response.render('pages/recipes', {recipeResults: recipes});
 })};
