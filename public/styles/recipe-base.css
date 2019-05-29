@@ -91,7 +91,7 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  color: rgba(20, 18, 18, 0.75);
   border-bottom: 2px solid transparent;
   
 }
@@ -104,7 +104,7 @@ body {
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-  color: #fff;
+  color: rgb(24, 17, 17);
   border-bottom-color: #fff;
 }
 
@@ -222,18 +222,43 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
 }
 
 .recipe-container{
-  display: grid;
   color: black;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  
 }
-/* 
+
+.recipes{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 250px 10% 10% 10%;
+}
+
 #recipe-image{
-  grid-column: 1fr;
+  grid-column: 2/3 ;
+  grid-row: 1;
+  justify-self: center;
+}
+
+#recipe-name{
+  grid-column-start: 2;
   grid-row: 2/3;
-} */
+}
+
+#recipe-des{
+  grid-column-start: 2;
+  grid-row: 3/4;
+}
 
 #recipebutton{
   background: rgb(153, 133, 133);
+  grid-column-start: 2;
+  grid-row: 4/5;
+  width: 100px;
+  justify-self: center;
 }
+
+
 
