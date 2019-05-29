@@ -52,14 +52,13 @@ for(chartNum = 0; chartNum < 10; chartNum++) {
 
 $("#search").focus().keydown(function() {
     console.log('keydown');
-    if ($('#search').val().length > 3) {
-        // console.log($('#search').val().length);
-        // console.log('String of val: ', $('#search').val())
-        // searchSuggestion();
-        $.post('/suggestion', {expression: $('#search').val() })
+    if ($('#search').val().length > 2) {
+        console.log($('#search').val().length);
+        console.log('String of val: ', $('#search').val())
+        $.post('/get-suggestions', {expression: $('#search').val() })
         .then(results => {
-            console.log('Results: ', results);
-            return results;
+            console.log('Results: ', results)
+            return results
         })
         .catch(error => {
             console.error(error);
