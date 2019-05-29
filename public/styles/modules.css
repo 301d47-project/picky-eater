@@ -1,62 +1,20 @@
-.about-body h1 {
-    font-size: 5vw;
+.team-list img {
+    max-width: 10vw; 
+    border-radius: 10%;
+    flex-shrink: 1;
+
 }
 
 .team-list {
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-flex-shrink: 1;
-}
-
-.team-list li {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 1;
-}
+    font-size: 30px;
+    }
+
 
 .team-list figure {
     flex-shrink: 1;
-}
-
-.team-list img {
-    max-width: 10vw; 
-    border-radius: 100%;
-    flex-shrink: 1;
-
-}
-
-.team-list section {
-    max-width: 70vw; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 1;
-    margin-left: 20px;
-}
-
-.team-list li section > h2 {
-    font-weight: bold;
-    font-size: 110%;
-    padding-bottom: 3px;
-}
-
-.team-list li a {
-    text-decoration: none;
-    color: #3F4447;
-    /* font-size: 150%: */
-}
-.team-list li a:hover {
-    text-decoration: underline;
-}
-
-.about-body footer a {
-    margin-bottom: 30px;
-    /* line-height: 200%; */
-}
-.about-body footer a:hover {
-    /* line-height: 200%; */
-    text-decoration: underline;
-
 }
