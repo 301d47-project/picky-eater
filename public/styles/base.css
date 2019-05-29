@@ -125,6 +125,7 @@ body {
 .results-container{
 padding-top: 75px;
 }
+
 section{
   width: auto;
   padding: 0px;
@@ -136,18 +137,25 @@ section{
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color:  rgba(12, 11, 11, 0.5);  
   border-radius: 10px;
-  height: auto;
+}
+
+.description {
+  font-size: 20px;
+
 }
 
 .results h2{
-  font-size: 16px;
+  font-size: 22px;
 }
 
-.chart-container{
-  width: 10vw;
+canvas{
+  width: 3vw;
+  display: flex;
+  justify-content: flex-end;
+  
 }
 
 
@@ -209,7 +217,7 @@ footer{
   .masthead,
   .mastfoot,
   .container {
-    width: 700px;
+    width: 960px;
   }
 
 
