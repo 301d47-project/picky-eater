@@ -63,7 +63,24 @@ function loadAboutPage(request, response) {
 function loadInfoPage(request, response) {
     response.render('pages/faqs')
 }
+
 function searchSuggestion(request, response) {
+    const query = request.body.expression;
+    let suggestions = [];
+
+   if (query.startsWith('spam') ) {
+        suggestions = ['spam', 'spam sandwich']
+    }   else if (query.startsWith('spag') ) {
+        suggestions = ['spaghetti', 'spagetti and meatballs']
+    }   else if (query.startsWith('span') ) {
+        suggestions = ['spanish rice']
+    }   else if (query.startsWith('spa') ) {
+        suggestions = ['spam', 'spam sandwich', 'spaghetti', 'spanish rice']
+    }   
+    response.send({'suggestions': { 'suggestion': suggestions}})
+
+}
+function searchSuggestionOld(request, response) {
     response.send({ 'suggestions': { 'suggestion': [ 'chicken', 'chicken breast', 'chicken salad', 'chiken wings' ] }})
     const apiSuggestion = require("request");
     const querySuggestion = request.body.expression;
