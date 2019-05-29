@@ -299,14 +299,12 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
   cursor: pointer;
   background-color:hsla(16, 54%, 20%, 0.75);
 }
-<<<<<<< HEAD
-=======
 
-.comparebutton:hover {
+.recipesave:hover {
   cursor: pointer;
   background-color:hsla(16, 54%, 20%, 0.75);
 }
-.comparebutton {
+.recipesave {
   grid-column-start: 3;
   grid-row-start: 4;
   width: 100px;
@@ -321,4 +319,3 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
 
 
 
->>>>>>> 4e4f9cf3d74c03a111c8ce4669976f7f6977a5c8
