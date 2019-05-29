@@ -29,12 +29,11 @@ for(chartNum = 0; chartNum < 10; chartNum++) {
     createChart('chart-' + chartNum);
 }
 
-$("#search").focus().keydown(function() {
+$('#search').focus().keydown(function() {
     console.log('keydown');
     if ($('#search').val().length > 3) {
-        // console.log($('#search').val().length);
-        // console.log('String of val: ', $('#search').val())
-        // searchSuggestion();
+        console.log($('#search').val().length);
+        console.log('String of val: ', $('#search').val())
         $.post('/suggestion', {expression: $('#search').val() })
         .then(results => {
             console.log('Results: ', results);
@@ -44,9 +43,13 @@ $("#search").focus().keydown(function() {
             console.error(error);
         })
     }
-})
+});
 
-    
+$('.comparebutton').click(function() {
+    console.log('Compare clicked');
+    // $.post('/compare', {expression: food_name, food_description})
+
+});
 
 
 

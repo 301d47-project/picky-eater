@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 
     <title>Picky Eater</title>
@@ -19,7 +19,7 @@
 
 
 <body>
-      
+
     <div class="site-wrapper">
 
         <div class="site-wrapper-inner">
@@ -42,21 +42,28 @@
                 </div>
 
                 <div class="inner cover">
-                   <div class='results-container'>
-                     <% searchResults.forEach((food, i) => { %>
+                    <div class='results-container'>
+                        <% searchResults.forEach((food, i) => { %>
                         <section class="results">
                             <ul>
-                                <li><h2><%= food.food_name %> </h2></li>
-                                <li><%= food.food_description %></li>
+                                <li>
+                                    <h2>
+                                        <%= food.food_name %>
+                                    </h2>
+                                </li>
+                                <li>
+                                    <%= food.food_description %>
+                                </li>
                                 <li class="chart-container"><canvas id="chart-<%- i %>" data-info="<%- food.food_description %> "></canvas></li>
+                                <li><button class="comparebutton" type="submit">Compare Food</button></li>
                             </ul>
                         </section>
-                   <% }) %>
-                </div>
-                <form action='/results' method="POST">
-                    <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
-                    <button id="hidden_button" type='submit'>BUTTON</button>
-                </form>
+                        <% }) %>
+                    </div>
+                    <form action='/results' method="POST">
+                        <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
+                        <button id="hidden_button" type='submit'>BUTTON</button>
+                    </form>
                 </div>
 
                 <div class="mastfoot">
@@ -73,18 +80,22 @@
     <footer>
         <nav>
             <ul class='footer'>
-                <li><img class='food-icons' src="images/icons/burger.png" alt=""><li>
-                <li><img class='food-icons' src="images/icons/ice-cream.png" alt=""><li>
-                <li><img class='food-icons' src="images/icons/glass.png" alt=""><li>
-                <li><img class='food-icons' src="images/icons/salad.png" alt=""><li>
+                <li><img class='food-icons' src="images/icons/burger.png" alt="">
+                <li>
+                <li><img class='food-icons' src="images/icons/ice-cream.png" alt="">
+                <li>
+                <li><img class='food-icons' src="images/icons/glass.png" alt="">
+                <li>
+                <li><img class='food-icons' src="images/icons/salad.png" alt="">
+                <li>
             </ul>
         </nav>
         <br>
         <br>
         <br>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
-                href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+                title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+                title="Creative Commons BY 3.0" target="_blank">CC
                 3.0 BY</a></div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
