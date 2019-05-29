@@ -66,8 +66,8 @@ $('#search').focus().keydown(function() {
     }
 });
 
-$('.comparebutton').click(function() {
-    console.log('Compare clicked');
+$('.recipesave').click(function() {
+    console.log('Save clicked');
     // $.post('/compare', {expression: food_name, food_description})
 
 });
