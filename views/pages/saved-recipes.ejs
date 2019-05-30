@@ -30,31 +30,10 @@
                     </div>
                 </div>
                 <div class="inner cover">
-                    <h1 class="cover-heading">Recipe Results</h1>
+                    <h1 class="cover-heading">Saved Recipes</h1>
                     <br>
                     <br>
-                    <img src="" alt="">
-                    <form action='/recipes' method="POST">
-                        <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
-                        <button id="hidden_button" type='submit'>BUTTON</button>
-                    </form>
                 </div>
-                <div class="inner cover">
-                    <div class='recipe-container'>
-                        <!-- needs a form to get the query data -->
-                      <% recipeResults.forEach(recipe => { %>  
-                         <Section class="recipes">
-
-                             <img id="recipe-image" src="images/picky-eater-placeholder.jpg">
-
-                             <img id="recipe-image"src="<%= recipe.recipe_image %>">
-                             <h2 id="recipe-name"><%= recipe.recipe_name %> </h2>
-                             <p id="recipe-des"><%= recipe.recipe_description %></p>
-                             <button id="recipebutton"><a href="<%= recipe.recipe_url %>">Recipe Link</a></button>
-                             <button class="recipesave" type="submit" data-url="<%= recipe.recipe_url %>" data-name="<%= recipe.recipe_name %>">Save Recipe</button>
-                         </Section>
-                    <% }) %>
-                 </div>
                 <div class="mastfoot">
                     <div class="inner">
                     </div>

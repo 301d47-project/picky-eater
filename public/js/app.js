@@ -72,11 +72,19 @@ $("#search").focus().keyup(function() {
     }
 });
 
-$('.recipesave').click(function() {
+
+
+$('.recipesave').click(function(event) {
     console.log('Save clicked');
-    // $.post('/compare', {expression: food_name, food_description})
-
-
+    event.preventDefault();
+    recipeObject = JSON.parse(localStorage.getItem('Recipes Saved'));
+    if (!recipeObject) {
+        recipeObject = {};
+    }
+    const recipeName = $(event.target).data('name');
+    const recipeLink = $(event.target).data('url');
+    recipeObject[recipeName] = recipeLink;
+    localStorage.setItem('Recipes Saved', JSON.stringify(recipeObject));
 });
 
 
