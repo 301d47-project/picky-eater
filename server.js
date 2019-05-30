@@ -10,7 +10,7 @@ const superagent = require('superagent');
 const request = require('request')
 const fixieRequest = request.defaults({'proxy': process.env.FIXIE_URL});
 
-fixieRequest('http://www.example.com', (err, res, body) => {
+fixieRequest('https://picky-eater123.herokuapp.com/', (err, res, body) => {
   console.log(`Got response: ${res.statusCode}`);
 });
 
