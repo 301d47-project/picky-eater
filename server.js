@@ -35,7 +35,7 @@ app.post('/results', performSearch);
 app.get('/cooking', loadInfoPage);
 app.post('/get-suggestions', searchSuggestionNew);
 app.post('/recipes', getRecipe);
-app.get('/saved-recipe', saveRecipe);
+// app.post('/compare', saveFood);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
@@ -62,7 +62,7 @@ function loadAboutPage(request, response) {
 }
 
 function loadInfoPage(request, response) {
-    response.render('pages/faqs')
+    response.render('pages/cooking')
 }
 let suggestions = [];
 function searchSuggestionNew(request, response) {
