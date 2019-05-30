@@ -61,8 +61,6 @@ for(chartNum = 0; chartNum < 10; chartNum++) {
 $("#search").focus().keyup(function() {
    
     if ($('#search').val().length > 1) {
-        // console.log($('#search').val().length);
-        // console.log('String of val: ', $('#search').val())
         $.post('/get-suggestions', {expression: $('#search').val() })
         .then(results => {
             console.log(results);
@@ -79,7 +77,6 @@ $("#search").focus().keyup(function() {
 
 // Saves recipes to local storage to be shown on Saved Recipes page
 $('.recipesave').click(function(event) {
-    console.log('Save clicked');
     event.preventDefault();
     recipeObject = JSON.parse(localStorage.getItem('Recipes Saved'));
     if (!recipeObject) {
@@ -106,14 +103,10 @@ function toHtml(info) {
 // Renders each recipe on button click 
 $('#show-recipes').click(function(event) {
     event.preventDefault();
-    console.log('Button hit');
     console.log(savedRecipes);
     for (let [parseRecipes, url] of savedRecipes) { 
         let recipeInfo = {'name': parseRecipes, url};
             $('#container').append(toHtml(recipeInfo));
-        // });
-        console.log('Parse: ', parseRecipes);
-        console.log('url: ', url);
     }
 
 })
