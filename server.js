@@ -78,7 +78,6 @@ client.query(SQL)
     foods.forEach(food => {
        suggestions.push(food);
     })
-
     response.send({'suggestions': { 'suggestion': suggestions}})
 })
 
@@ -90,7 +89,7 @@ function searchSuggestionOld(request, response) {
 
     const suggestion = {
         method: 'POST',
-        url: `https://platform.fatsecret.com/rest/server.api?method=foods.autocomplete&expression=${querySuggestion}&format=json`,
+        url: `https://platform.fatsecret.com/rest/server.api?method="foods.autocomplete"&expression=${querySuggestion}&format=json`,
         headers:{'content-type':'application/json'},
         auth: {
             bearer: process.env.BEARER_TOKEN
@@ -99,6 +98,10 @@ function searchSuggestionOld(request, response) {
     }
 
     apiSuggestion(suggestion, function(error, suggestionApi, body) {
+        const data = JSON.parse(body);
+        const foods = data;
+        console.log(foods);
+        response.send({'suggestions': { 'suggestion': foods}})
         if (error) throw new Error(error);
     
 })};
@@ -108,7 +111,6 @@ function searchSuggestionOld(request, response) {
 function loadInfoPage(request, response) {
     response.render('pages/cooking')
 }
-
 
 function performSearch(request, response) {
 
