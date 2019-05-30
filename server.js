@@ -35,7 +35,7 @@ app.post('/results', performSearch);
 app.get('/cooking', loadInfoPage);
 app.post('/get-suggestions', searchSuggestionNew);
 app.post('/recipes', getRecipe);
-app.get('/saved-recipe', saveRecipe);
+// app.post('/compare', saveFood);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
@@ -62,7 +62,7 @@ function loadAboutPage(request, response) {
 }
 
 function loadInfoPage(request, response) {
-    response.render('pages/faqs')
+    response.render('pages/cooking')
 }
 
 function searchSuggestionNew(request,response) {
@@ -147,7 +147,6 @@ function getRecipe(request, response) {
     headers:{'content-type':'application/json'},
     auth: {
         bearer:  process.env.BEARER_TOKEN    
-
         }
     }
     // response.send(options.url);
@@ -162,7 +161,14 @@ function getRecipe(request, response) {
     response.render('pages/recipes', {recipeResults: recipes});
 })};
 
-function saveRecipe(request, response) {
-    response.render('pages/saved-recipes');
-    // response.render('pages/saved-recipe', {recipeResults: recipes});    
-}
+// function saveFood(request, response) {
+//     console.log('Food Saved');
+
+//     let {name, description} = expression.body;
+
+//     let SQL = `INSERT INTO food (name, description) VALUES ($1, $2)`;
+
+//     let values = [name, description];
+//     client.query(SQL, values);
+    
+// }

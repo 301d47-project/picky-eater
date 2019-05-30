@@ -227,7 +227,7 @@ footer{
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 610px) {
   .masthead,
   .mastfoot,
   .container {
