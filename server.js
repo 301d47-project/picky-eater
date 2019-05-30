@@ -62,26 +62,25 @@ function loadAboutPage(request, response) {
 }
 
 function loadInfoPage(request, response) {
-    response.render('pages/faqs')
+    response.render('pages/cooking')
 }
 
 function searchSuggestionNew(request,response) {
-const query = request.body.expression
-const SQL = `SELECT * FROM food`;
+    const query = request.body.expression
+    const SQL = `SELECT * FROM food`;
 
 
-client.query(SQL)
-.then(result =>{
-    console.log(query);
-    let foods = result.rows[0].item.split(",")
-    let suggestions = []
-    foods.forEach(food => {
-       suggestions.push(food);
+    client.query(SQL)
+        .then(result =>{
+        console.log(query);
+        let foods = result.rows[0].item.split(",")
+        let suggestions = []
+        foods.forEach(food => {
+            suggestions.push(food);
+        })
+
+        response.send({'suggestions': { 'suggestion': suggestions}})
     })
-
-    response.send({'suggestions': { 'suggestion': suggestions}})
-})
-
 }
 
 function searchSuggestionOld(request, response) {
