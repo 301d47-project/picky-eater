@@ -1,3 +1,24 @@
+
+.team-list img {
+    max-width: 10vw; 
+    border-radius: 10%;
+    flex-shrink: 1;
+
+}
+
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+    font-size: 30px;
+    }
+
+
+.team-list figure {
+    flex-shrink: 1;
+}
 .recipesave:hover {
     cursor: pointer;
     background-color:hsla(115, 100%, 45%, 0.75);
