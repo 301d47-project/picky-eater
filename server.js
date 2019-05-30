@@ -35,7 +35,7 @@ app.post('/results', performSearch);
 app.get('/cooking', loadInfoPage);
 app.post('/get-suggestions', searchSuggestionNew);
 app.post('/recipes', getRecipe);
-// app.post('/compare', saveFood);
+app.get('/saved-recipe', saveRecipe);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
