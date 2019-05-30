@@ -6,7 +6,8 @@
 a,
 a:focus,
 a:hover {
-  color: rgb(12, 9, 9);
+  color: rgb(252, 245, 245);
+  /* text-decoration:purple; */
 }
 
 input {
@@ -27,7 +28,7 @@ input {
  */
 
 html, body {
-  
+  font-family: 'Ranga', cursive;
   height: 100%;
 }
 
@@ -241,7 +242,7 @@ footer{
 }
 
 #footer-section {
-background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh78jj1rr.cloudfront.net%2Fimage%2Fpreview%2FBRiFDYYQMjby7gh25%2Fstoryblocks-white-marble-stone-wall-background-marble-texture-with-natural-pattern_S4d5TYjPf_SB_PM.jpg&imgrefurl=https%3A%2F%2Fwww.storyblocks.com%2Fstock-image%2Fwhite-marble-stone-wall-background-marble-texture-with-natural-pattern-bascakowfjdxrljhd&docid=ujuYDuH7xzYF-M&tbnid=7vZbvz-eQ7bIYM%3A&vet=10ahUKEwicwPK-4rziAhWog1QKHU_YALQQMwhVKAIwAg..i&w=1000&h=667&safe=active&bih=671&biw=1280&q=marble%20white%20background%20image&ved=0ahUKEwicwPK-4rziAhWog1QKHU_YALQQMwhVKAIwAg&iact=mrc&uact=8)
+  background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh78jj1rr.cloudfront.net%2Fimage%2Fpreview%2FBRiFDYYQMjby7gh25%2Fstoryblocks-white-marble-stone-wall-background-marble-texture-with-natural-pattern_S4d5TYjPf_SB_PM.jpg&imgrefurl=https%3A%2F%2Fwww.storyblocks.com%2Fstock-image%2Fwhite-marble-stone-wall-background-marble-texture-with-natural-pattern-bascakowfjdxrljhd&docid=ujuYDuH7xzYF-M&tbnid=7vZbvz-eQ7bIYM%3A&vet=10ahUKEwicwPK-4rziAhWog1QKHU_YALQQMwhVKAIwAg..i&w=1000&h=667&safe=active&bih=671&biw=1280&q=marble%20white%20background%20image&ved=0ahUKEwicwPK-4rziAhWog1QKHU_YALQQMwhVKAIwAg&iact=mrc&uact=8)
 
 }
 
@@ -275,11 +276,14 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
 #recipe-name{
   grid-column-start: 2;
   grid-row: 2/3;
+  color: white;
+  font-size: 30px;
 }
 
 #recipe-des{
   grid-column-start: 2;
   grid-row: 3/4;
+  font-size: 20px;
 }
 
 #recipebutton{
@@ -303,7 +307,7 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
   background-color:hsla(16, 54%, 20%, 0.75);
 }
 .recipesave {
-  grid-column-start: 3;
+  grid-column-start: 2;
   grid-row-start: 4;
   width: 100px;
   justify-self: center;

@@ -9,6 +9,8 @@
     <link rel="icon" href="">
     <link rel="stylesheet" href="styles/recipe-base.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Ranga&display=swap" rel="stylesheet">
+
     <title>Picky Eater</title>
 </head>
 <body>
@@ -49,9 +51,9 @@
                              <img id="recipe-image" src="images/picky-eater-placeholder.jpg">
 
                              <img id="recipe-image"src="<%= recipe.recipe_image %>">
-                             <h2 id="recipe-name"><%= recipe.recipe_name %> </h2>
+                             <h2 id="recipe-name"><a href="<%= recipe.recipe_url %>"> <%= recipe.recipe_name %></a> </h2>
                              <p id="recipe-des"><%= recipe.recipe_description %></p>
-                             <button id="recipebutton"><a href="<%= recipe.recipe_url %>">Recipe Link</a></button>
+                             <!-- <button id="recipebutton"><a href="<%= recipe.recipe_url %>">Recipe Link</a></button> -->
                              <button class="recipesave" type="submit" data-url="<%= recipe.recipe_url %>" data-name="<%= recipe.recipe_name %>">Save Recipe</button>
                          </Section>
                     <% }) %>
