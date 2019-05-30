@@ -1,8 +1,8 @@
 require('dotenv').config();
 
 var request = require("request");
-clientID = process.env.JAMES_TOKEN;
-clientSecret = process.env.JAMES_SECRET;
+clientID = process.env.RICHARD_TOKEN;
+clientSecret = process.env.RICHARD_SECRET;
 
 
 var options = { 
