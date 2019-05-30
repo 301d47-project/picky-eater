@@ -49,19 +49,17 @@
                         <% searchResults.forEach((food, i) => { %>
                         <section class="results">
                             <ul>
-                                <li>
-                                    <h2><%= food.food_name %> </h2>
-                                </li>
+                                <li><h2><%= food.food_name %> </h2></li>
                                 <li class='description'><%= food.food_description %></li>
-                                <li><canvas id="chart-<%- i %>" width="50" height="50"
-                                        data-info="<%- food.food_description %> "></canvas></li>
+                                <li><canvas id="chart-<%- i %>" width="50" height="50"data-info="<%- food.food_description %> "></canvas></li>
                             </ul>
                         </section>
                         <% }) %>
                     </div>
                     <form action='/results' method="POST">
 
-                        <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
+                        <input id='search' type="text" name="expression" value=""
+                            placeholder="search for any food item">
                         <button id="hidden_button" type='submit'>BUTTON</button>
                     </form>
                 </div>
@@ -89,9 +87,9 @@
         <br>
         <br>
         <br>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
-                title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
-                title="Creative Commons BY 3.0" target="_blank">CC
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
+                href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC
                 3.0 BY</a></div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

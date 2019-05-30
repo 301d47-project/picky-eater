@@ -10,7 +10,7 @@ const superagent = require('superagent');
 const request = require('request')
 const fixieRequest = request.defaults({'proxy': process.env.FIXIE_URL});
 
-fixieRequest('http://www.example.com', (err, res, body) => {
+fixieRequest('https://picky-eater123.herokuapp.com/', (err, res, body) => {
   console.log(`Got response: ${res.statusCode}`);
 });
 
@@ -71,6 +71,7 @@ function loadAboutPage(request, response) {
 function loadInfoPage(request, response) {
     response.render('pages/cooking')
 }
+
 let suggestions = [];
 function searchSuggestionNew(request, response) {
     if (suggestions.length === 0) {
@@ -91,29 +92,29 @@ function searchSuggestionNew(request, response) {
     }
 }
 
-function searchSuggestionOld(request, response) {
-    const apiSuggestion = require("request");
-    const querySuggestion = request.body.expression;
+// function searchSuggestionOld(request, response) {
+//     const apiSuggestion = require("request");
+//     const querySuggestion = request.body.expression;
 
-    const suggestion = {
-        method: 'POST',
-        url: `https://platform.fatsecret.com/rest/server.api?method="foods.autocomplete"&expression=${querySuggestion}&format=json`,
-        headers: { 'content-type': 'application/json' },
-        auth: {
-            bearer: process.env.BEARER_TOKEN
+//     const suggestion = {
+//         method: 'POST',
+//         url: `https://platform.fatsecret.com/rest/server.api?method="foods.autocomplete"&expression=${querySuggestion}&format=json`,
+//         headers: { 'content-type': 'application/json' },
+//         auth: {
+//             bearer: process.env.BEARER_TOKEN
 
-        }
-    }
+//         }
+//     }
 
-    apiSuggestion(suggestion, function (error, suggestionApi, body) {
-        const data = JSON.parse(body);
-        const foods = data;
-        console.log(foods);
-        response.send({ 'suggestions': { 'suggestion': foods } })
-        if (error) throw new Error(error);
+//     apiSuggestion(suggestion, function (error, suggestionApi, body) {
+//         const data = JSON.parse(body);
+//         const foods = data;
+//         console.log(foods);
+//         response.send({ 'suggestions': { 'suggestion': foods } })
+//         if (error) throw new Error(error);
 
-    })
-};
+//     })
+// };
 
 
 
@@ -136,13 +137,14 @@ function performSearch(request, response) {
         }
     }
 
-    apiRequest(options, function (error, responseApi, body) {
+    fixieRequest(options, function (error, responseApi, body) {
         if (error) throw new Error(error);
         const data = JSON.parse(body);
         const foods = data.foods.food.slice(0, 10);
         response.render('pages/results', { searchResults: foods })
     })
 };
+
 
 
 function getRecipe(request, response) {
@@ -163,7 +165,7 @@ function getRecipe(request, response) {
     }
     // response.send(options.url);
 
-    apiRequest(options, function (error, responseApi, body) {
+    fixieRequest(options, function (error, responseApi, body) {
         if (error) throw new Error(error);
         // console.log(body);
         const data = JSON.parse(body);
