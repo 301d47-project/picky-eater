@@ -72,20 +72,23 @@ $("#search").focus().keyup(function() {
     }
 });
 
-const recipeArray = [];
+let recipeArray = [];
 
 
 $('.recipesave').click(function(event) {
     console.log('Save clicked');
     event.preventDefault();
-    if (localStorage.length > 0) {
-        JSON.parse(localStorage);
-        recipeArray.push(localStorage);
+    if (localStorage.length >= 1) {
+        console.log('We have local');
+    //     // JSON.parse(window.localStorage);
+        let recipeArray = [localStorage];
+        // recipeArray.push(localStorage);
+        console.log(recipeArray);
     }
     const recipeName = $(event.target).data('name');
     const recipeLink = $(event.target).data('url');
     recipeArray.push(`{${recipeName}: ${recipeLink}}`);
-    localStorage.setItem('Recipes Saved', recipeArray);
+    localStorage.setItem('Recipes Saved', JSON.stringify(recipeArray));
 });
 
 
