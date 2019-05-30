@@ -7,6 +7,13 @@ require('dotenv').config();
 const express = require('express');
 const pg = require('pg');
 const superagent = require('superagent');
+const request = require('request')
+const fixieRequest = request.defaults({'proxy': process.env.FIXIE_URL});
+
+fixieRequest('http://www.example.com', (err, res, body) => {
+  console.log(`Got response: ${res.statusCode}`);
+});
+
 
 
 // Application Setup
