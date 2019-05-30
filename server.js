@@ -18,9 +18,9 @@ app.use(express.static('./public'));
 
 
 // Database Setup
-// const client = new pg.Client(process.env.DATABASE_URL);
-// client.connect();
-// client.on('error', err => console.error(err));
+const client = new pg.Client(process.env.DATABASE_URL);
+client.connect();
+client.on('error', err => console.error(err));
 
 // View engine for server-side rendering template (EJS)
 app.set('view engine', 'ejs');
@@ -35,7 +35,7 @@ app.post('/results', performSearch);
 app.get('/cooking', loadInfoPage);
 app.post('/get-suggestions', searchSuggestion);
 app.post('/recipes', getRecipe);
-app.post('/compare', saveFood);
+app.post('/save-recipe', saveRecipe);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
@@ -160,14 +160,14 @@ function getRecipe(request, response) {
     response.render('pages/recipes', {recipeResults: recipes});
 })};
 
-function saveFood(request, response) {
-    console.log('Food Saved');
+function saveRecipe(request, response) {
+    console.log('Recipe Saved');
 
-    let {name, description} = expression.body;
+    let {name, url} = expression.body;
 
     let SQL = `INSERT INTO food (name, description) VALUES ($1, $2)`;
 
-    let values = [name, description];
+    let values = [name, url];
     client.query(SQL, values);
     
 }
