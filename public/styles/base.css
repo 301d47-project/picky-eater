@@ -142,6 +142,11 @@ section{
   border-radius: 10px;
 }
 
+.results li{
+  display: flex;
+  justify-content: space-around;
+}
+
 .description {
   font-size: 20px;
 
