@@ -147,6 +147,7 @@ function getRecipe(request, response) {
     headers:{'content-type':'application/json'},
     auth: {
         bearer:  process.env.BEARER_TOKEN    
+
         }
     }
     // response.send(options.url);
