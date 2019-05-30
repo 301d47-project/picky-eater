@@ -169,5 +169,4 @@ function getRecipe(request, response) {
 
 function saveRecipe(request, response) {
     response.render('pages/saved-recipes');
-    // response.render('pages/saved-recipe', {recipeResults: recipes});    
 }
