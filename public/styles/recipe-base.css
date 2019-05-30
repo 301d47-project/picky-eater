@@ -3,11 +3,11 @@
  */
 
 /* Links */
-a,
+/* a,
 a:focus,
 a:hover {
-  color: rgb(12, 9, 9);
-}
+  color: rgb(240, 224, 224);
+} */
 
 input {
   height: 50px;
@@ -90,8 +90,8 @@ body {
 .masthead-brand {
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 25px;
-  background: purple;
+  font-size: 55px;
+  background: white;
   padding: 1rem;
   color: white;
 }
@@ -227,7 +227,7 @@ footer{
   }
 }
 
-@media (min-width: 610px) {
+@media (min-width: 1780px) {
   .masthead,
   .mastfoot,
   .container {
