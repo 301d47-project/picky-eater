@@ -35,7 +35,7 @@ app.post('/results', performSearch);
 app.get('/cooking', loadInfoPage);
 app.post('/get-suggestions', searchSuggestionNew);
 app.post('/recipes', getRecipe);
-app.get('/saved-recipe', saveRecipe);
+// app.post('/compare', saveFood);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
@@ -66,21 +66,22 @@ function loadInfoPage(request, response) {
 }
 
 function searchSuggestionNew(request,response) {
-    const query = request.body.expression
-    const SQL = `SELECT * FROM food`;
+const query = request.body.expression
+const SQL = `SELECT * FROM food`;
 
 
-    client.query(SQL)
-        .then(result =>{
-        console.log(query);
-        let foods = result.rows[0].item.split(",")
-        let suggestions = []
-        foods.forEach(food => {
-            suggestions.push(food);
-        })
-
-        response.send({'suggestions': { 'suggestion': suggestions}})
+client.query(SQL)
+.then(result =>{
+    console.log(query);
+    let foods = result.rows[0].item.split(",")
+    let suggestions = []
+    foods.forEach(food => {
+       suggestions.push(food);
     })
+
+    response.send({'suggestions': { 'suggestion': suggestions}})
+})
+
 }
 
 function searchSuggestionOld(request, response) {
@@ -146,7 +147,6 @@ function getRecipe(request, response) {
     headers:{'content-type':'application/json'},
     auth: {
         bearer:  process.env.BEARER_TOKEN    
-
         }
     }
     // response.send(options.url);
@@ -161,7 +161,14 @@ function getRecipe(request, response) {
     response.render('pages/recipes', {recipeResults: recipes});
 })};
 
-function saveRecipe(request, response) {
-    response.render('pages/saved-recipes');
-    // response.render('pages/saved-recipe', {recipeResults: recipes});    
-}
+// function saveFood(request, response) {
+//     console.log('Food Saved');
+
+//     let {name, description} = expression.body;
+
+//     let SQL = `INSERT INTO food (name, description) VALUES ($1, $2)`;
+
+//     let values = [name, description];
+//     client.query(SQL, values);
+    
+// }
