@@ -93,7 +93,7 @@ function searchSuggestionOld(request, response) {
         url: `https://platform.fatsecret.com/rest/server.api?method=foods.autocomplete&expression=${querySuggestion}&format=json`,
         headers:{'content-type':'application/json'},
         auth: {
-            bearer:'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1NTkyMjA5MzcsImV4cCI6MTU1OTMwNzMzNywiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjpbImh0dHBzOi8vb2F1dGguZmF0c2VjcmV0LmNvbS9yZXNvdXJjZXMiLCJiYXNpYyJdLCJjbGllbnRfaWQiOiIwYzVhYTFmODkzMGQ0YzRkYTRkODU3N2MzYmI0ZTZkOSIsInNjb3BlIjpbImJhc2ljIl19.FEyZKXAwsqpSVj2uRRbr68iQWWoybK0VXQR45stCoq-41bMb1xBBur4qOh5sQFfZi4g7ohZq3TURO9FACkfuYYZE_OTU32oYPJevfN_TBQOxc8X7lIdMFYc_2Y6MCsOoDoEnFM9LlIyib_CJ2DkuR0Qmb30TcioKvyBPdZLijzd1ueqMTJAsKXNu9KUXBPILQ-ByDCQwYdIjDTzuQ6v_beFkaNZhtT1eyORlDYK7qUqHq_eEyTxIpmUpC65bTWhaUtY4rRyag0HSb5_26Kbm3M9uD8Y9ikmtIzO7JZO6EwEipyyvwSlkJzb-R3F3AO1TAGDtjg4hY3pDve7E1pZ19g'
+            bearer: process.env.BEARER_TOKEN
 
         }
     }
@@ -120,7 +120,7 @@ function performSearch(request, response) {
         url: `https://platform.fatsecret.com/rest/server.api?method=foods.search&search_expression=${query}&format=json`,
         headers:{'content-type':'application/json'},
         auth: {
-            bearer: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1NTkyMjA5MzcsImV4cCI6MTU1OTMwNzMzNywiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjpbImh0dHBzOi8vb2F1dGguZmF0c2VjcmV0LmNvbS9yZXNvdXJjZXMiLCJiYXNpYyJdLCJjbGllbnRfaWQiOiIwYzVhYTFmODkzMGQ0YzRkYTRkODU3N2MzYmI0ZTZkOSIsInNjb3BlIjpbImJhc2ljIl19.FEyZKXAwsqpSVj2uRRbr68iQWWoybK0VXQR45stCoq-41bMb1xBBur4qOh5sQFfZi4g7ohZq3TURO9FACkfuYYZE_OTU32oYPJevfN_TBQOxc8X7lIdMFYc_2Y6MCsOoDoEnFM9LlIyib_CJ2DkuR0Qmb30TcioKvyBPdZLijzd1ueqMTJAsKXNu9KUXBPILQ-ByDCQwYdIjDTzuQ6v_beFkaNZhtT1eyORlDYK7qUqHq_eEyTxIpmUpC65bTWhaUtY4rRyag0HSb5_26Kbm3M9uD8Y9ikmtIzO7JZO6EwEipyyvwSlkJzb-R3F3AO1TAGDtjg4hY3pDve7E1pZ19g'
+            bearer:  process.env.BEARER_TOKEN
 
         }
     }
@@ -146,7 +146,7 @@ function getRecipe(request, response) {
     url: `https://platform.fatsecret.com/rest/server.api?method=recipes.search&search_expression=${query}&format=json`,
     headers:{'content-type':'application/json'},
     auth: {
-        bearer: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ1MjZBMkFCNkQ0MkQ5REIwMjBEMThBRDMxRTE5MTdCMUUzMjg2RTUiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJSU2FpcTIxQzJkc0NEUml0TWVHUmV4NHlodVUifQ.eyJuYmYiOjE1NTkyMjA5MzcsImV4cCI6MTU1OTMwNzMzNywiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjpbImh0dHBzOi8vb2F1dGguZmF0c2VjcmV0LmNvbS9yZXNvdXJjZXMiLCJiYXNpYyJdLCJjbGllbnRfaWQiOiIwYzVhYTFmODkzMGQ0YzRkYTRkODU3N2MzYmI0ZTZkOSIsInNjb3BlIjpbImJhc2ljIl19.FEyZKXAwsqpSVj2uRRbr68iQWWoybK0VXQR45stCoq-41bMb1xBBur4qOh5sQFfZi4g7ohZq3TURO9FACkfuYYZE_OTU32oYPJevfN_TBQOxc8X7lIdMFYc_2Y6MCsOoDoEnFM9LlIyib_CJ2DkuR0Qmb30TcioKvyBPdZLijzd1ueqMTJAsKXNu9KUXBPILQ-ByDCQwYdIjDTzuQ6v_beFkaNZhtT1eyORlDYK7qUqHq_eEyTxIpmUpC65bTWhaUtY4rRyag0HSb5_26Kbm3M9uD8Y9ikmtIzO7JZO6EwEipyyvwSlkJzb-R3F3AO1TAGDtjg4hY3pDve7E1pZ19g'    
+        bearer:  process.env.BEARER_TOKEN    
         }
     }
     // response.send(options.url);
