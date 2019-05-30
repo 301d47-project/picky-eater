@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $(this).scrollTop(0);
+});
+
 function createChart(id) {
 
     if (document.getElementById(id)) {
@@ -114,6 +118,3 @@ $('#show-recipes').click(function(event) {
 
 })
 
-$(document).ready(function(){
-    $(this).scrollTop(0);
-});
