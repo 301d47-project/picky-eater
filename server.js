@@ -167,6 +167,14 @@ function getRecipe(request, response) {
     })
 };
 
-function saveRecipe(request, response) {
-    response.render('pages/saved-recipes');
-}
+// function saveFood(request, response) {
+//     console.log('Food Saved');
+
+//     let {name, description} = expression.body;
+
+//     let SQL = `INSERT INTO food (name, description) VALUES ($1, $2)`;
+
+//     let values = [name, description];
+//     client.query(SQL, values);
+    
+// }

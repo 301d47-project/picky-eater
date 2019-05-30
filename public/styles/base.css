@@ -77,6 +77,13 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 25px;
+  
+}
+.masthead-brand img {
+  position: left;
+  max-width: 10vw; 
+  border-radius: 5%;
+  flex-shrink: 2;
 }
 
 .masthead-nav > li {
@@ -84,7 +91,7 @@ body {
   position: relative;
 }
 .masthead-nav > li + li {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .masthead-nav > li > a {
   padding-right: 0;
