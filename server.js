@@ -10,9 +10,9 @@ const superagent = require('superagent');
 const request = require('request')
 const fixieRequest = request.defaults({'proxy': process.env.FIXIE_URL});
 
-fixieRequest('https://picky-eater123.herokuapp.com/', (err, res, body) => {
-  console.log(`Got response: ${res.statusCode}`);
-});
+// fixieRequest('https://picky-eater123.herokuapp.com/', (err, res, body) => {
+//   console.log(`Got response: ${res.statusCode}`);
+// });
 
 
 
@@ -136,7 +136,7 @@ function performSearch(request, response) {
         }
     }
 
-    apiRequest(options, function (error, responseApi, body) {
+    fixieRequest(options, function (error, responseApi, body) {
         if (error) throw new Error(error);
         const data = JSON.parse(body);
         const foods = data.foods.food.slice(0, 10);
