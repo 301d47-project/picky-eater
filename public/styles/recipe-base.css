@@ -227,7 +227,7 @@ footer{
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1700px) {
   .masthead,
   .mastfoot,
   .container {
@@ -246,14 +246,12 @@ background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fd1yn1kh
 }
 
 .recipe-container{
-
   color: white;
   display: grid;
   grid-template-columns: 1fr ;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
-  margin-top: 150px;
-  
+  margin-top: 150px;  
   
 }
 
