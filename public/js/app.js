@@ -70,7 +70,14 @@ $("#search").focus().keyup(function() {
             console.error(error);
         })
     }
-})
+});
+
+$('.recipesave').click(function() {
+    console.log('Save clicked');
+    // $.post('/compare', {expression: food_name, food_description})
+
+
+});
 
 
 
