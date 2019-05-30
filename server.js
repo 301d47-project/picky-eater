@@ -13,7 +13,7 @@ const superagent = require('superagent');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./public'));
 
 
@@ -64,24 +64,24 @@ function loadAboutPage(request, response) {
 function loadInfoPage(request, response) {
     response.render('pages/faqs')
 }
+let suggestions = [];
+function searchSuggestionNew(request, response) {
+    if (suggestions.length === 0) {
+        const query = request.body.expression
+        const SQL = `SELECT * FROM food`;
 
-function searchSuggestionNew(request,response) {
-const query = request.body.expression
-const SQL = `SELECT * FROM food`;
-
-
-client.query(SQL)
-.then(result =>{
-    console.log(query);
-    let foods = result.rows[0].item.split(",")
-    let suggestions = []
-    foods.forEach(food => {
-       suggestions.push(food);
-    })
-
-    response.send({'suggestions': { 'suggestion': suggestions}})
-})
-
+        client.query(SQL)
+            .then(result => {
+                console.log(query);
+                let foods = result.rows[0].item.split(",")
+                foods.forEach(food => {
+                    suggestions.push(food);
+                })
+                response.send({ 'suggestions': { 'suggestion': suggestions }})
+            })
+    } else {
+        response.send({ 'suggestions': { 'suggestion': suggestions } })
+    }
 }
 
 function searchSuggestionOld(request, response) {
@@ -90,25 +90,29 @@ function searchSuggestionOld(request, response) {
 
     const suggestion = {
         method: 'POST',
-        url: `https://platform.fatsecret.com/rest/server.api?method=foods.autocomplete&expression=${querySuggestion}&format=json`,
-        headers:{'content-type':'application/json'},
+        url: `https://platform.fatsecret.com/rest/server.api?method="foods.autocomplete"&expression=${querySuggestion}&format=json`,
+        headers: { 'content-type': 'application/json' },
         auth: {
             bearer: process.env.BEARER_TOKEN
 
         }
     }
 
-    apiSuggestion(suggestion, function(error, suggestionApi, body) {
+    apiSuggestion(suggestion, function (error, suggestionApi, body) {
+        const data = JSON.parse(body);
+        const foods = data;
+        console.log(foods);
+        response.send({ 'suggestions': { 'suggestion': foods } })
         if (error) throw new Error(error);
-    
-})};
+
+    })
+};
 
 
 
 function loadInfoPage(request, response) {
     response.render('pages/cooking')
 }
-
 
 function performSearch(request, response) {
 
@@ -118,49 +122,50 @@ function performSearch(request, response) {
     const options = {
         method: 'POST',
         url: `https://platform.fatsecret.com/rest/server.api?method=foods.search&search_expression=${query}&format=json`,
-        headers:{'content-type':'application/json'},
+        headers: { 'content-type': 'application/json' },
         auth: {
-            bearer:  process.env.BEARER_TOKEN
+            bearer: process.env.BEARER_TOKEN
 
         }
     }
-    
-    apiRequest(options, function(error, responseApi, body) {
+
+    apiRequest(options, function (error, responseApi, body) {
         if (error) throw new Error(error);
         const data = JSON.parse(body);
         const foods = data.foods.food.slice(0, 10);
-        response.render('pages/results', {searchResults: foods})
+        response.render('pages/results', { searchResults: foods })
     })
 };
 
 
 function getRecipe(request, response) {
-    
+
     const apiRequest = require("request");
     const query = request.body.expression;
     // console.log('query', query);
-    
+
 
     const options = {
-    method: 'GET',
-    url: `https://platform.fatsecret.com/rest/server.api?method=recipes.search&search_expression=${query}&format=json`,
-    headers:{'content-type':'application/json'},
-    auth: {
-        bearer:  process.env.BEARER_TOKEN    
+        method: 'GET',
+        url: `https://platform.fatsecret.com/rest/server.api?method=recipes.search&search_expression=${query}&format=json`,
+        headers: { 'content-type': 'application/json' },
+        auth: {
+            bearer: process.env.BEARER_TOKEN
 
         }
     }
     // response.send(options.url);
 
-    apiRequest(options, function(error, responseApi, body) {
-    if (error) throw new Error(error);
-    // console.log(body);
-    const data = JSON.parse(body);
-    //response.send(data);
-    const recipes = data.recipes.recipe.slice(0, 10);
-    //response.send(recipes);
-    response.render('pages/recipes', {recipeResults: recipes});
-})};
+    apiRequest(options, function (error, responseApi, body) {
+        if (error) throw new Error(error);
+        // console.log(body);
+        const data = JSON.parse(body);
+        //response.send(data);
+        const recipes = data.recipes.recipe.slice(0, 10);
+        //response.send(recipes);
+        response.render('pages/recipes', { recipeResults: recipes });
+    })
+};
 
 function saveRecipe(request, response) {
     response.render('pages/saved-recipes');
