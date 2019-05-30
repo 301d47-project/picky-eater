@@ -73,7 +73,7 @@ $("#search").focus().keyup(function() {
 });
 
 
-
+// Saves recipes to local storage to be shown on Saved Recipes page
 $('.recipesave').click(function(event) {
     console.log('Save clicked');
     event.preventDefault();
@@ -87,8 +87,38 @@ $('.recipesave').click(function(event) {
     localStorage.setItem('Recipes Saved', JSON.stringify(recipeObject));
 });
 
+// Grabs previosly saved recipes from local storage and makes a 2-D array of them when 
+// button is clicked. 
+const parseRecipes = JSON.parse(localStorage.getItem('Recipes Saved'));
+const savedRecipes = Object.entries(parseRecipes);
 
 
+function toHtml(info) {
+    let template = $('#recipe-template').html();
+    let templateRender = Handlebars.compile(template);
+    return templateRender(info);
+}
+
+
+
+// function loadRecipes() = {
+
+// } 
+
+$('#show-recipes').click(function(event) {
+    event.preventDefault();
+    console.log('Button hit');
+    console.log(savedRecipes);
+    for (let [parseRecipes, url] of savedRecipes) { 
+        let recipeInfo = {'name': parseRecipes, url};
+        // savedRecipes.forEach(showRecipe => {
+            $('#container').append(toHtml(recipeInfo));
+        // });
+        console.log('Parse: ', parseRecipes);
+        console.log('url: ', url);
+    }
+
+})
 
 $(document).ready(function(){
     $(this).scrollTop(0);
