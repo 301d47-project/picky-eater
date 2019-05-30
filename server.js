@@ -7,6 +7,13 @@ require('dotenv').config();
 const express = require('express');
 const pg = require('pg');
 const superagent = require('superagent');
+const request = require('request')
+const fixieRequest = request.defaults({'proxy': process.env.FIXIE_URL});
+
+fixieRequest('http://www.example.com', (err, res, body) => {
+  console.log(`Got response: ${res.statusCode}`);
+});
+
 
 
 // Application Setup
@@ -35,7 +42,7 @@ app.post('/results', performSearch);
 app.get('/cooking', loadInfoPage);
 app.post('/get-suggestions', searchSuggestionNew);
 app.post('/recipes', getRecipe);
-// app.post('/compare', saveFood);
+app.get('/saved-recipe', saveRecipe);
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
@@ -167,14 +174,6 @@ function getRecipe(request, response) {
     })
 };
 
-// function saveFood(request, response) {
-//     console.log('Food Saved');
-
-//     let {name, description} = expression.body;
-
-//     let SQL = `INSERT INTO food (name, description) VALUES ($1, $2)`;
-
-//     let values = [name, description];
-//     client.query(SQL, values);
-    
-// }
+function saveRecipe(request, response) {
+    response.render('pages/saved-recipes');
+}

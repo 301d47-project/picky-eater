@@ -92,26 +92,20 @@ $('.recipesave').click(function(event) {
 const parseRecipes = JSON.parse(localStorage.getItem('Recipes Saved'));
 const savedRecipes = Object.entries(parseRecipes);
 
-
+// Function to render saved recipes into the DOM via handelbars template
 function toHtml(info) {
     let template = $('#recipe-template').html();
     let templateRender = Handlebars.compile(template);
     return templateRender(info);
 }
 
-
-
-// function loadRecipes() = {
-
-// } 
-
+// Renders each recipe on button click 
 $('#show-recipes').click(function(event) {
     event.preventDefault();
     console.log('Button hit');
     console.log(savedRecipes);
     for (let [parseRecipes, url] of savedRecipes) { 
         let recipeInfo = {'name': parseRecipes, url};
-        // savedRecipes.forEach(showRecipe => {
             $('#container').append(toHtml(recipeInfo));
         // });
         console.log('Parse: ', parseRecipes);
