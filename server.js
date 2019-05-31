@@ -141,7 +141,7 @@ function performSearch(request, response) {
         if (error) throw new Error(error);
         const data = JSON.parse(body);
         const foods = data.foods.food.slice(0, 10);
-        response.render('pages/results', { searchResults: foods })
+        response.render('pages/results', { searchResults: foods, searchQuery: query })
     })
 };
 
