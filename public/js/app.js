@@ -63,7 +63,7 @@ $("#search").focus().keyup(function() {
     if ($('#search').val().length > 1) {
         $.post('/get-suggestions', {expression: $('#search').val() })
         .then(results => {
-            console.log(results);
+            console.log(results.suggestions.suggestion);
             $( "#search" ).autocomplete({
                 source: results.suggestions.suggestion
               });
