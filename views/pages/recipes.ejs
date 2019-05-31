@@ -8,18 +8,36 @@
     <meta name="author" content="">
     <link rel="icon" href="">
     <link rel="stylesheet" href="styles/recipe-base.css">
+    <link rel="stylesheet" href="styles/bounce.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Ranga&display=swap" rel="stylesheet">
 
     <title>Picky Eater</title>
 </head>
 <body>
-        <%- include('header') %>  
-        <div class="inner cover">
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="container">
+                <div class="masthead-clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand"><a href="/">Picky Eater</a></h3>
+                        
+                        <nav>
+                            <ul class="nav masthead-nav">
+                                <!-- add file paths -->
+                                <li class="active"><a href="/">Home</a></li>
+                                <li><a href="/cooking">Recipes</a></li>
+                                <li><a href="/saved-recipe">Saved Recipes</a></li>
+                                <li><a href="/about">About Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="inner cover">
                     <h1 class="cover-heading">Recipe Results</h1>
+                    <img src="" alt=""> 
+
                     <br>
-                    <br>
-                    <img src="" alt="">
                     <form action='/recipes' method="POST">
                         <input id='search' type="text" name="expression" value="" placeholder="search for any food item">
                         <button id="hidden_button" type='submit'>BUTTON</button>

@@ -17,29 +17,7 @@
     <title>Picky Eater</title>
 
   </head>
-
-  <div class="site-wrapper">
-
-    <div class="site-wrapper-inner">
-
-        <div class="container">
-
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <h3 class="masthead-brand">Picky Eater</h3>
-                    <nav>
-                      <ul class="nav masthead-nav">
-                          <!-- add file paths -->
-                          <li><a href="/">Home</a></li>
-                          <li><a href="/cooking">Recipes</a></li>
-                          <li><a href="/about">About Us</a></li>
-                          <li><a href="/saved-recipe">Your Recipes</a></li>
-                      </ul>
-                  </nav>
-                </div>
-            </div>
-
-
+  <%- include('header') %>
           <main>
             <h1>About Us</h1>
             <ul class="team-list">
@@ -49,7 +27,7 @@
                 </figure>
                 <section>
                   <h2> <a href="https://github.com/sabdi21">Shukri Abdi</a></h2>
-                  <p>As a Software Developer at Seattle with a passion for serving low-income communities, Shukri loves spending her free time tutoring children from her local communities. For fun, she likes to take her one year-old son on day long trips to different cities in Washington.</p>
+                  <p>As a Software Developer at Seattle with a passion for serving low-income communities. I love spending my free time tutoring children from my local communities and implementing STEM-based education for projects. For fun, she likes to take her one year-old son on day long trips to different cities in Washington.</p>
                 </section>
               </li>
               <li>
@@ -77,7 +55,7 @@
                 </figure>
                 <section>
                   <h2><a href="https://github.com/Richard0923">Richard Rosado</a></h2>
-                  <p>Here is a little bit about me. I was born in Puerto Rico, joined the military at 18 and now im a software developer. </p>
+                  <p>I was born and born in Puerto Rico. I joined the military four years ago and was stationed here in Washington. During my service I was exposed technology and that inspired me to pursue a career in software developer. </p>
                 </section>
               </li>
             </ul>
@@ -87,21 +65,7 @@
           </main>
 
           <footer>
-            <nav>
-                <ul class='footer'>
-                    <li><img class='food-icons bounce'  src="images/icons/burger.png" alt=""><li>
-                        <li><img class='food-icons bounce' src="images/icons/ice-cream.png" alt=""><li>
-                        <li><img class='food-icons bounce' src="images/icons/glass.png" alt=""><li>
-                        <li><img class='food-icons bounce' src="images/icons/salad.png" alt=""><li>
-                </ul>
-            </nav>
-            <br>
-            <br>
-            <br>
-            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
-                    href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC
-                    3.0 BY</a></div>
+            <%- include('footer') %>
         </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </body>
