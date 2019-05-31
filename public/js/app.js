@@ -65,7 +65,7 @@ $("#search").focus().keyup(function() {
         // console.log('String of val: ', $('#search').val())
         $.post('/get-suggestions', {expression: $('#search').val() })
         .then(results => {
-            console.log(results);
+            console.log(results.suggestions.suggestion);
             $( "#search" ).autocomplete({
                 source: results.suggestions.suggestion
               });
