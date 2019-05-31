@@ -19,7 +19,29 @@
 </head>
 
 <body>
-    <%- include('header') %>
+
+    <div class="site-wrapper">
+
+        <div class="site-wrapper-inner">
+
+            <div class="container">
+
+
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">Picky Eater</h3>
+                        <nav>
+                            <ul class="nav masthead-nav">
+                                <!-- add file paths -->
+                                <li class="active"><a href="/">Home</a></li>
+                                <li><a href="/cooking">Recipes</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/saved-recipe">Your Recipes</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
                 <div class="inner cover">
                     <h1 class="cover-heading">Take control of your diet and find out exactly what's in that spicy
                         chicken nugget. <br>We don't judge, we just inform.</h1>
@@ -45,8 +67,22 @@
     </div>
 
     <footer>
-        <%- include('footer') %>
-
+        <nav>
+            <ul class='footer'>
+                <li><img class='food-icons bounce'  src="images/icons/burger.png" alt=""><li>
+                <li><img class='food-icons bounce' src="images/icons/ice-cream.png" alt=""><li>
+                <li><img class='food-icons bounce' src="images/icons/glass.png" alt=""><li>
+                <li><img class='food-icons bounce' src="images/icons/salad.png" alt=""><li>
+                 
+            </ul>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
+                href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC
+                3.0 BY</a></div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
