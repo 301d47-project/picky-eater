@@ -15,9 +15,9 @@ Link: (http://pickyeater123.com/)
 
 
 ## Versions in Our Development Cycle
-### Days Worked         Tasks Completed
-Monday 5/28      -    Client-side setup 
-Tuesday 5/29     -    API set-up & search-capable
-Wednesday 5/29   -    Recipe API & page setup
-Thursday 5/30    -    Cleaned up front-end
-Friday 5/31      -    Deployed and presented
+#### Days Worked         Tasks Completed
+- Monday 5/28      -    Client-side setup 
+- Tuesday 5/29     -    API set-up & search-capable
+- Wednesday 5/29   -    Recipe API & page setup
+- Thursday 5/30    -    Cleaned up front-end
+- Friday 5/31      -    Deployed and presented
